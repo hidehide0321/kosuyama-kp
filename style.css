@@ -1,0 +1,364 @@
+:root {
+    --primary-color: #87CEEB; /* 薄いブルー */
+    --text-color: #333;
+    --bg-color: #FFFFFF;
+    --bg-light-color: #f7fafd;
+    --font-serif: 'Noto Serif JP', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header-nav ul li {
+    margin-left: 30px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.header-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1500x600');
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+#hero h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    margin: 0 0 20px 0;
+}
+
+/* Problem Section */
+#problem {
+    background-color: var(--bg-light-color);
+}
+
+.problem-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.problem-title {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.problem-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    display: inline-block;
+}
+
+.problem-content ul li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.problem-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.problem-solution {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+/* Section */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.bg-light {
+    background-color: var(--bg-light-color);
+}
+
+/* Concept Section */
+.concept-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.concept-text {
+    flex: 1;
+}
+
+.concept-image {
+    flex: 1;
+}
+
+.concept-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Service Section */
+.service-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-item {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Gallery Section */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Voice Section */
+.voice-items {
+    display: flex;
+    gap: 40px;
+}
+
+.voice-item {
+    flex: 1;
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.voice-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.voice-image-before, .voice-image-after {
+    flex: 1;
+    position: relative;
+}
+
+.voice-image-before img, .voice-image-after img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.voice-image-before span, .voice-image-after span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.voice-image-after span {
+    background: var(--primary-color);
+}
+
+.voice-text h4 {
+    font-family: var(--font-serif);
+    margin: 0 0 10px 0;
+}
+
+
+/* Access Section */
+.access-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.access-map {
+    flex: 1;
+}
+
+.access-map iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.access-info {
+    flex: 1;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6caed8;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Menu Page */
+#menu-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1500x400');
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+#menu-hero h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    margin: 0;
+}
+
+.menu-list-item {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.menu-list-image {
+    flex: 1;
+}
+
+.menu-list-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.menu-list-text {
+    flex: 2;
+}
+
+.menu-list-text h3 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+}
