@@ -118,7 +118,7 @@ body {
 
 /* Hero Section */
 #hero {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1500x600');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/esthe_duration_1.png');
     height: 600px;
     background-size: cover;
     background-position: center;
