@@ -69,6 +69,53 @@ body {
     color: var(--primary-color);
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* デフォルトでは非表示 */
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 200;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-menu span:nth-child(2) {
+    top: 11px;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 22px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
 /* Hero Section */
 #hero {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://via.placeholder.com/1500x600');
@@ -381,6 +428,32 @@ body {
 
     .header-nav ul li {
         margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .header-nav.active {
+        max-height: 300px; /* ナビゲーションの高さに合わせて調整 */
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+        display: block; /* active時に表示 */
     }
 
     #hero h1 {
