@@ -362,3 +362,97 @@ body {
     font-weight: 700;
     color: var(--text-color);
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .header-nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero h1 {
+        font-size: 36px;
+    }
+
+    .problem-title {
+        font-size: 28px;
+    }
+
+    .concept-content,
+    .service-items,
+    .voice-items,
+    .access-content,
+    .menu-list-item {
+        flex-direction: column;
+    }
+
+    .concept-image,
+    .access-map,
+    .menu-list-image {
+        width: 100%;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .voice-item {
+        margin-bottom: 30px;
+    }
+
+    .voice-images {
+        flex-direction: row;
+    }
+
+    .voice-image-before, .voice-image-after {
+        flex: 1;
+    }
+
+    #menu-hero h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 28px;
+    }
+
+    .problem-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .gallery-images {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-images {
+        flex-direction: column;
+    }
+
+    .menu-list-text h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .price {
+        margin-top: 5px;
+    }
+}
