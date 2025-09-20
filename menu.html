@@ -1,87 +1,236 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メニュー | コスメ山本</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メニュー | コスメ山本</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-logo">
-                <a href="index.html">Cosme Yamamoto</a>
+  <header class="header">
+    <div class="container">
+      <div class="header-logo">
+        <a href="index.html">Cosme Yamamoto</a>
+      </div>
+      <button class="hamburger-menu" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="header-nav" id="global-nav">
+        <ul>
+          <li><a href="index.html#concept">私たちの想い</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="index.html#gallery">ギャラリー</a></li>
+          <li><a href="index.html#voice">お客さまの声</a></li>
+          <li><a href="index.html#access">アクセス</a></li>
+          <li><a href="contact.html" class="btn">ご予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="menu-hero">
+      <div class="hero-content">
+        <h1>Menu</h1>
+        <p>コースメニュー</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">フェイシャルコース</h2>
+        <p class="section-subtitle">FACIAL COURSE</p>
+        <p style="text-align:center; color:#666; margin:-6px 0 26px;">すべてのメニューは、経験豊富なスタッフがお客様一人ひとりに合わせてご提案します。</p>
+        <div class="menu-list">
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <img src="images/esthe_duration_1.png" alt="スタンダードコース">
             </div>
-            <button class="hamburger-menu" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="header-nav" id="global-nav">
-                <ul>
-                    <li><a href="index.html#concept">私たちの想い</a></li>
-                    <li><a href="menu.html">メニュー</a></li>
-                    <li><a href="index.html#gallery">ギャラリー</a></li>
-                    <li><a href="index.html#access">アクセス</a></li>
-                    <li><a href="index.html#contact" class="btn">ご予約・お問い合わせ</a></li>
-                </ul>
-            </nav>
+            <div class="menu-list-text">
+              <h3>スタンダードコース <span class="price">60分 &yen;8,800</span></h3>
+              <p>まずは試したい方に。クレンジング、整肌、マッサージ、パックで土台を整え、透明感のある素肌へ。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <img src="images/Latest-facial-aesthetics-equipment-1.jpg" alt="エイジングケアコース">
+            </div>
+            <div class="menu-list-text">
+              <h3>エイジングケアコース <span class="price">75分 &yen;13,200</span></h3>
+              <p>年齢サインが気になる方へ。めぐりを促し、ハリ・弾力・ツヤを高めるケアで明るい印象に。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <img src="images/cosyama.cherie.esthe.13.png" alt="スペシャルケアコース">
+            </div>
+            <div class="menu-list-text">
+              <h3>スペシャルケアコース <span class="price">90分 &yen;16,500</span></h3>
+              <p>イベント前や集中的に整えたいときに最適。お悩みに合わせて施術内容をカスタマイズします。</p>
+            </div>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <section id="menu-hero">
-            <div class="hero-content">
-                <h1>Menu</h1>
-                <p>コースメニュー</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">フェイシャルコース</h2>
-                <p class="section-subtitle">FACIAL COURSE</p>
-                <div class="menu-list">
-                    <div class="menu-list-item">
-                        <div class="menu-list-image">
-                            <img src="images/esthe_duration_1.png" alt="スタンダードコース">
-                        </div>
-                        <div class="menu-list-text">
-                            <h3>スタンダードコース <span class="price">60分 &yen;8,800</span></h3>
-                            <p>初めての方にもおすすめの基本コース。クレンジング、洗顔、マッサージ、パックで肌の基礎を整え、潤いと透明感を引き出します。</p>
-                        </div>
-                    </div>
-                    <div class="menu-list-item">
-                        <div class="menu-list-image">
-                            <img src="images/Latest-facial-aesthetics-equipment-1.jpg" alt="エイジングケアコース">
-                        </div>
-                        <div class="menu-list-text">
-                            <h3>エイジングケアコース <span class="price">75分 &yen;13,200</span></h3>
-                            <p>年齢サインが気になる方向けの集中ケア。リフトアップ効果の高いマッサージと、ハリ・弾力を与える美容液を贅沢に使用します。</p>
-                        </div>
-                    </div>
-                    <div class="menu-list-item">
-                        <div class="menu-list-image">
-                            <img src="images/小室秀治.png" alt="肌質改善コース">
-                        </div>
-                        <div class="menu-list-text">
-                            <h3>肌質改善コース <span class="price">90分 &yen;16,500</span></h3>
-                            <p>ニキビ、乾燥、毛穴など、特定の肌悩みに特化してアプローチ。肌本来の再生能力を高め、トラブルの起きにくい健やかな肌へと導きます。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Cosme Yamamoto. All Rights Reserved.</p>
+        <div style="text-align:center; margin-top:16px;">
+          <a href="contact.html" class="btn">予約・お問合せ</a>
         </div>
-    </footer>
+      </div>
+    </section>
+    <!-- Option Menu Section -->
+        <section class="section" id="option-menu">
+      <div class="container">
+        <h2 class="section-title">＜オプションメニュー＞</h2>
+        <p class="section-subtitle">OPTION MENU</p>
+        <p style="text-align:center; color:#666; margin:-6px 0 26px;">ぜひ一度、当サロンの特別なオプションをご体験ください。</p>
+        <div class="menu-list option-list">
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>フェイシャルハイパーナイフ <span class="price">&yen;4,000</span></h3>
+              <p>フェイスラインのたるみやむくみをどうにかしたい方に。高周波の温かい力で、すっきり小顔へと導きます。</p>
+            </div>
+          </div>
 
-    <script src="script.js"></script>
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>ヒト幹細胞 <span class="price">&yen;3,800</span></h3>
+              <p>肌のハリ不足や年齢肌の根本ケアに。幹細胞の力で肌細胞を修復活性化し、本来の再生力を高めます。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>水素 <span class="price">&yen;3,000</span></h3>
+              <p>紫外線やストレスによるお肌の酸化は、シミやシワの原因に。水素が活性酸素を除去し、内側からお肌のダメージをリセットします。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>水素シャワー <span class="price">20分 &yen;2,000 / 45分 &yen;4,000 / 120分 &yen;8,000</span></h3>
+              <p>疲れやすい、だるい、冷えやむくみが気になる方に。水素の力で血流を促し、代謝アップと健康的な美しさをサポートします。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>ハイパーナイフ 3パーツ <span class="price">&yen;2,000</span></h3>
+              <p>長時間のデスクワークやスマホで、つらい肩や首のこりを感じていませんか？温かい高周波で肩甲骨首デコルテまでじっくりほぐし、身体も心もリフレッシュできます。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>エクソソームモイストシートマスク <span class="price">料金・時間はお問い合わせください</span></h3>
+              <p>乾燥が気になるお肌へ。エクソソーム、コラーゲン、ヒアルロン酸など贅沢な美容成分をたっぷり届け、しっとりプルンと仕上げます。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>毛穴ディープクレンジング + 炭酸泡 <span class="price">15分 &yen;2,200</span></h3>
+              <p>皮脂・角栓・ざらつきをすっきり。透明感UP、メイクのりも改善。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>超音波リフト（小顔EMS） <span class="price">15分 &yen;2,750</span></h3>
+              <p>フェイスラインを引き締め、むくみやこわばりをケア。短時間で実感をサポート。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>高保湿マスク（シート/クリーム） <span class="price">10分 &yen;1,650</span></h3>
+              <p>乾燥・くすみを集中ケア。うるおい補給でふっくらなめらか肌へ。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>目元ケア（アイケア集中） <span class="price">10分 &yen;1,650</span></h3>
+              <p>乾燥・小じわ・クマに。デリケートな目元をやさしく集中保湿。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>デコルテマッサージ <span class="price">15分 &yen;2,200</span></h3>
+              <p>首・肩のこりをケアしめぐりを促進。姿勢のサポートやリラックスにも。</p>
+            </div>
+          </div>
+
+          <div class="menu-list-item">
+            <div class="menu-list-image">
+              <div class="image-slot" aria-label="写真スペース">写真準備中</div>
+            </div>
+            <div class="menu-list-text">
+              <h3>ヘッドリラクゼーション <span class="price">15分 &yen;2,200</span></h3>
+              <p>頭皮をやさしくほぐし、眼精疲労や睡眠の質向上をサポート。</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:16px;">
+          <a href="contact.html" class="btn">ご予約・お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cosme Yamamoto. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | コスメ山本</title>
+  <meta name="description" content="コスメ山本へのご予約・お問い合わせフォーム。お名前・連絡先・ご要望を入力して送信してください。">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
+  </head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-logo">
+        <a href="index.html">Cosme Yamamoto</a>
+      </div>
+      <button class="hamburger-menu" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="header-nav" id="global-nav">
+        <ul>
+          <li><a href="index.html#concept">私たちの想い</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="index.html#gallery">ギャラリー</a></li>
+          <li><a href="index.html#voice">お客さまの声</a></li>
+          <li><a href="index.html#access">アクセス</a></li>
+          <li><a href="contact.html" class="btn">ご予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="contact-hero">
+      <div class="hero-content">
+        <h1>Contact</h1>
+        <p>ご予約・お問い合わせ</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">お問い合わせフォーム</h2>
+        <p class="section-subtitle">CONTACT FORM</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">お名前 <span class="req">必須</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="お名前を入力してください">
+              <div class="error" data-for="name"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="req">必須</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="メールアドレスを入力してください">
+              <div class="error" data-for="email"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">件名 <span class="req">必須</span></label>
+              <select id="subject" name="subject" required>
+                <option value="">件名を選択してください</option>
+                <option>ご予約</option>
+                <option>お問い合わせ</option>
+                <option>メディア取材</option>
+                <option>その他</option>
+              </select>
+              <div class="error" data-for="subject"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="tel">電話番号</label>
+              <input type="tel" id="tel" name="tel" inputmode="tel" pattern="[0-9\-\+\s]*" autocomplete="tel" placeholder="電話番号を入力してください（任意）">
+              <div class="error" data-for="tel"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="menu">ご希望メニュー</label>
+              <select id="menu" name="menu">
+                <option value="">メニューを選択してください</option>
+                <option>スタンダードコース</option>
+                <option>エイジングケアコース</option>
+                <option>スペシャルケアコース</option>
+                <option>その他</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">ご希望日</label>
+                <input type="date" id="date" name="date" placeholder="日付を選択してください">
+              </div>
+              <div class="form-group">
+                <label for="time">ご希望時間</label>
+                <input type="time" id="time" name="time" placeholder="時間を選択してください">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">お問い合わせ内容（コメント欄） <span class="req">必須</span></label>
+              <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+              <div class="error" data-for="message"></div>
+            </div>
+
+            <div class="form-check">
+              <label>
+                <input type="checkbox" id="agree" required>
+                個人情報の取り扱いに同意します <span class="req">必須</span>
+              </label>
+              <div class="error" data-for="agree"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-cta">送信する</button>
+              <p class="alt">メールアプリが開かない場合は <a href="mailto:info@example.com">info@example.com</a> へお送りください。</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cosme Yamamoto. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -118,7 +118,7 @@ body {
 
 /* Hero Section */
 #hero {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/esthe_duration_1.png');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
     height: 600px;
     background-size: cover;
     background-position: center;
@@ -313,7 +313,7 @@ body {
 /* Access Section */
 .access-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 上揃えで文字の頭を揃える */
     gap: 50px;
 }
 
@@ -328,6 +328,22 @@ body {
 
 .access-info {
     flex: 1;
+}
+
+.access-info p {
+    margin: 6px 0;
+    line-height: 1.9;
+}
+
+.access-info h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    margin: 12px 0 8px;
+}
+
+.access-info h4 {
+    font-size: 16px;
+    margin: 8px 0 6px;
 }
 
 /* Button */
@@ -356,7 +372,7 @@ body {
 
 /* Menu Page */
 #menu-hero {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/esthe_duration_1.png');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -447,7 +463,8 @@ body {
     }
 
     .header-nav.active {
-        max-height: 300px; /* ナビゲーションの高さに合わせて調整 */
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .header-nav ul {
@@ -528,4 +545,311 @@ body {
     .price {
         margin-top: 5px;
     }
+}
+
+/* Business status badge */
+.business-status {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: #eee;
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.business-status.open {
+    background-color: #e6f7ec;
+    color: #0a7a3d;
+}
+
+/* Inline info under access */
+.access-info .info-inline {
+    margin-top: 28px; /* カテゴリ間の余白を強調 */
+    padding-top: 16px;
+    border-top: 1px solid #e6e6e6;
+}
+.access-info .info-block { margin-top: 12px; }
+.access-info .info-block h4 {
+    margin: 6px 0;
+    font-size: 16px;
+}
+.access-info .info-block ul {
+    margin: 0 0 0 18px;
+    padding: 0;
+}
+
+/* Contact page */
+#contact-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.form-grid { max-width: 760px; margin: 0 auto; }
+.form-group { margin-bottom: 16px; }
+.form-row { display: flex; gap: 16px; }
+.form-row .form-group { flex: 1; }
+
+.form-group label { display:block; font-weight:700; margin-bottom:6px; }
+.req { color: #d33; font-size: 12px; margin-left: 4px; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 16px;
+    background: #fff;
+}
+
+textarea { resize: vertical; }
+
+.form-check { margin: 14px 0; }
+.form-check input { margin-right: 8px; }
+
+.form-actions { margin-top: 12px; }
+.form-actions .alt { font-size: 14px; color: #666; margin-top: 8px; }
+
+.error { color: #c0392b; font-size: 13px; min-height: 18px; margin-top: 4px; }
+
+@media (max-width: 600px) {
+    .form-row { flex-direction: column; }
+}
+
+/* Clean design overrides: simple & airy */
+:root {
+    --heading-color: #1f2a44;
+    --muted-color: #777;
+    --radius: 8px;
+}
+
+/* Typography and sections */
+.section { padding: 72px 0; }
+.section-title { color: var(--heading-color); }
+.section-subtitle { color: var(--muted-color); letter-spacing: 0.2em; margin-bottom: 40px; }
+
+/* Hero: lighter overlay, slightly shorter */
+#hero { background-image: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)), url('images/cosyama.cherie.esthe.6.png'); height: 520px; }
+#hero h1 { font-size: 44px; margin-bottom: 16px; }
+
+/* Problem list bullet: simple dot */
+.problem-content ul li::before { content: '・'; }
+
+/* Cards to flat panels */
+.service-item,
+.voice-item { box-shadow: none; border: 1px solid #f0f2f5; border-radius: var(--radius); padding: 24px; }
+
+/* Access */
+.access-map iframe { height: 420px; border-radius: var(--radius); }
+.access-info .info-inline { margin-top: 28px; padding-top: 16px; border-top: 1px solid #e6e6e6; }
+
+/* Buttons: flat and accessible */
+.btn { padding: 10px 22px; border-radius: 999px; transition: background-color .2s ease; }
+.btn:hover { background-color: #6cbbe6; }
+.btn:focus-visible { outline: 3px solid rgba(135,206,235,.5); outline-offset: 2px; }
+
+/* Business status: softer */
+.business-status { background-color: #eef5fb; color: #2f6a8f; font-size: 13px; }
+.business-status.open { background-color: #e6f7ec; color: #0a7a3d; }
+
+@media (max-width: 768px) {
+  #hero { height: 420px; }
+  #hero h1 { font-size: 34px; }
+  .access-map iframe { height: 340px; }
+}
+
+@media (max-width: 480px) {
+  #hero h1 { font-size: 28px; }
+  .access-map iframe { height: 300px; }
+}
+
+/* Layout simplification: tidy and airy */
+.container { max-width: 1000px; }
+.header-logo a { font-size: 22px; letter-spacing: .02em; }
+
+/* Gallery: fewer columns for clarity */
+.gallery-images { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+/* Voice and menu: card-like but flat */
+.voice-items { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.menu-list-item { border: 1px solid #f0f2f5; border-radius: 8px; padding: 20px; box-shadow: none; }
+.menu-list-text h3 { border-bottom: 1px solid #e6eef6; }
+
+/* (removed) Home front simple menu cards */
+
+@media (max-width: 900px) {
+  .gallery-images { grid-template-columns: repeat(2, 1fr); }
+  .voice-items { grid-template-columns: 1fr; }
+}
+
+/* Home Menu (front page digest) */
+.home-menu-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.home-menu-card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 16px;
+    text-align: center;
+}
+
+.home-menu-card img {
+    width: 100%;
+    height: 220px; /* 統一高さ */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.home-menu-card h3 {
+    font-size: 18px;
+    margin: 12px 0 6px;
+    font-family: var(--font-serif);
+}
+
+.home-menu-card .price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.home-menu-actions {
+    text-align: center;
+    margin-top: 18px;
+}
+
+@media (max-width: 1024px) {
+    .home-menu-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .home-menu-cards {
+        grid-template-columns: 1fr;
+    }
+    .home-menu-card img {
+        height: 200px;
+    }
+}
+
+/* Thanks message */
+.thanks-message {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color, #1f2a44);
+  margin: 6px 0 10px;
+}
+
+.thanks-note {
+  color: #666;
+  margin: 0 0 14px;
+}
+
+/* Comfortable, clean form fields */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  min-height: 44px;
+  line-height: 1.4;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.form-group textarea { min-height: 140px; }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #9aa3ad; }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 0;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(135,206,235,.20);
+}
+
+/* Stronger ring for keyboard users */
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 3px solid rgba(135,206,235,.45);
+  outline-offset: 2px;
+}
+
+/* Highlight label when the group is focused */
+.form-group:focus-within label {
+  color: var(--primary-color);
+}
+
+/* Error state */
+.form-group.has-error label { color: #d93025; }
+.form-group .is-invalid,
+.form-check .is-invalid {
+  border-color: #d93025 !important;
+  box-shadow: 0 0 0 3px rgba(217,48,37,.12);
+}
+.form-check.has-error label { color: #d93025; }
+
+/* Checkbox tap target */
+.form-check label { display: inline-flex; align-items: center; gap: 8px; }
+.form-check input { width: 18px; height: 18px; }
+
+/* CTA submit button — more prominent */
+.btn-cta {
+  background-color: #2b8fd8;
+  box-shadow: 0 6px 16px rgba(43,143,216,.28);
+  padding: 12px 26px;
+  font-size: 16px;
+}
+.btn-cta:hover { background-color: #1f7fc2; }
+.btn-cta:focus-visible { outline: 4px solid rgba(43,143,216,.35); outline-offset: 2px; }
+.btn-cta:active { transform: translateY(1px); }
+
+.form-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+@media (max-width: 600px) {
+  .form-actions .btn-cta { width: 100%; text-align: center; }
+}
+
+/* Option list image slot (placeholder) */
+.option-list .menu-list-image .image-slot {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa3ab;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .option-list .menu-list-image .image-slot { height: 180px; }
 }
