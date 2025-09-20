@@ -3,19 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting…</title>
-  <meta http-equiv="refresh" content="0; url=hp/index.html">
-  <link rel="canonical" href="hp/index.html">
-  <style>
-    body { font-family: system-ui, -apple-system, 'Noto Sans JP', sans-serif; margin: 0; height: 100vh; display: grid; place-items: center; }
-    .box { text-align: center; padding: 24px; }
-    a { color: #0875c0; text-decoration: none; }
-  </style>
+  <title>コスメ山本 | フェイシャルエステサロン</title>
+  <meta name="description" content="コスメ山本は、お肌悩みに寄り添うフェイシャルエステサロン。丁寧なカウンセリングと心地よい施術で、素肌本来の美しさへ。">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
-  <div class="box">
-    <p>自動的に移動しない場合は <a href="hp/index.html">こちら</a> をクリックしてください。</p>
-  </div>
-  <script>location.replace('hp/index.html');</script>
+  <header class="header">
+    <div class="container">
+      <div class="header-logo">
+        <a href="index.html">Cosme Yamamoto</a>
+      </div>
+      <button class="hamburger-menu" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="header-nav" id="global-nav">
+        <ul>
+          <li><a href="index.html#concept">私たちの想い</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="index.html#voice">お客さまの声</a></li>
+          <li><a href="index.html#gallery">ギャラリー</a></li>
+          <li><a href="index.html#access">アクセス</a></li>
+          <li><a href="contact.html" class="btn">ご予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>素肌に、自信を。</h1>
+        <p>丁寧なカウンセリングと心地よい時間を。</p>
+      </div>
+    </section>
+
+    <section id="concept" class="section">
+      <div class="container">
+        <h2 class="section-title">私たちの想い</h2>
+        <p class="section-subtitle">CONCEPT</p>
+        <div class="concept-content">
+          <div class="concept-text">
+            <h3>肌悩みに寄り添い、心まで晴れる体験を。</h3>
+            <p>丁寧なヒアリングで今の状態を見極め、あなたに合う最適なケアをご提案。無理なく続けられるホームケアまで含め、キレイが続く仕組みを一緒に作ります。</p>
+            <p>最新機器と手技を組み合わせた施術で、めぐりを促し、うるおいとハリのある素肌へ。リラックスできる穏やかな空間で、心も身体もふっと軽く。</p>
+          </div>
+          <div class="concept-image">
+            <img src="images/facial-beauty-effect1.jpg" alt="コンセプトイメージ">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="home-menu" class="section">
+      <div class="container">
+        <h2 class="section-title">エステメニュー</h2>
+        <p class="section-subtitle">MENU</p>
+        <div class="home-menu-cards">
+          <div class="home-menu-card">
+            <img src="images/cosyama.cherie.esthe.6.png" alt="スタンダードコース">
+            <h3>スタンダードコース</h3>
+            <p class="price">60分 &yen;8,800</p>
+          </div>
+          <div class="home-menu-card">
+            <img src="images/cosyama.cherie.esthe.10.png" alt="エイジングケアコース">
+            <h3>エイジングケアコース</h3>
+            <p class="price">75分 &yen;13,200</p>
+          </div>
+          <div class="home-menu-card">
+            <img src="images/cosyama.cherie.esthe.13.png" alt="スペシャルケアコース">
+            <h3>スペシャルケアコース</h3>
+            <p class="price">90分 &yen;16,500</p>
+          </div>
+        </div>
+        <div class="home-menu-actions" style="text-align:center; margin-top: 18px;">
+          <a href="menu.html" class="btn">メニューの詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice" class="section">
+      <div class="container">
+        <h2 class="section-title">お客さまの声</h2>
+        <p class="section-subtitle">VOICE</p>
+        <div class="voice-items">
+          <div class="voice-item">
+            <div class="voice-images">
+              <div class="voice-image-before">
+                <img src="images/ba1b.jpg" alt="ビフォー">
+                <span>BEFORE</span>
+              </div>
+              <div class="voice-image-after">
+                <img src="images/ba4c.jpg" alt="アフター">
+                <span>AFTER</span>
+              </div>
+            </div>
+            <div class="voice-text">
+              <h4>むくみがすっきり。肌が明るく（40代）</h4>
+              <p>施術後はフェイスラインが引き締まり、トーンアップ。家族にも気づかれて嬉しかったです。</p>
+            </div>
+          </div>
+          <div class="voice-item">
+            <div class="voice-images">
+              <div class="voice-image-before">
+                <img src="images/IMG-7296.jpg" alt="ビフォー">
+                <span>BEFORE</span>
+              </div>
+              <div class="voice-image-after">
+                <img src="images/ba1b.jpg" alt="アフター">
+                <span>AFTER</span>
+              </div>
+            </div>
+            <div class="voice-text">
+              <h4>肌荒れが落ち着きメイクが楽に（50代）</h4>
+              <p>カウンセリングで生活習慣まで見直せました。無理なく続けられるホームケアも助かっています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">ギャラリー</h2>
+        <p class="section-subtitle">GALLERY</p>
+        <div class="gallery-images">
+          <img src="images/cosyama.cherie.esthe.2.png" alt="ギャラリー画像2">
+          <img src="images/cosyama.cherie.esthe.3.png" alt="ギャラリー画像3">
+          <img src="images/cosyama.cherie.esthe.4.png" alt="ギャラリー画像4">
+          <img src="images/cosyama.cherie.esthe.5.png" alt="ギャラリー画像5">
+          <img src="images/cosyama.cherie.esthe.6.png" alt="ギャラリー画像6">
+          <img src="images/cosyama.cherie.esthe.7.png" alt="ギャラリー画像7">
+          <img src="images/cosyama.cherie.esthe.8.png" alt="ギャラリー画像8">
+          <img src="images/cosyama.cherie.esthe.9.png" alt="ギャラリー画像9">
+          <img src="images/cosyama.cherie.esthe.10.png" alt="ギャラリー画像10">
+          <img src="images/cosyama.cherie.esthe.11.png" alt="ギャラリー画像11">
+          <img src="images/cosyama.cherie.esthe.12.png" alt="ギャラリー画像12">
+          <img src="images/cosyama.cherie.esthe.13.png" alt="ギャラリー画像13">
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">アクセス</h2>
+        <p class="section-subtitle">ACCESS</p>
+        <div class="access-content">
+          <div class="access-map">
+            <iframe src="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m&output=embed" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="コスメ山本の地図"></iframe>
+          </div>
+          <div class="access-info">
+            <p><strong>コスメ山本</strong></p>
+            <p>営業時間: 10:00〜18:30</p>
+            <p>定休日: 日・月</p>
+            <p id="business-status" class="business-status" aria-live="polite">準備中</p>
+            <p>TEL: <a href="tel:0299960033">0299-96-0033</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-subtitle">CONTACT</p>
+        <p>ご予約、ご相談、メニューのご質問などお気軽にご連絡ください。</p>
+        <div style="display:flex; gap:12px; flex-wrap: wrap; justify-content:center;">
+          <a href="tel:0299960033" class="btn">電話で問い合わせ</a>
+          <a href="contact.html" class="btn">メールでお問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cosme Yamamoto. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
