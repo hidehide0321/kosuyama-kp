@@ -10,6 +10,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Front page: set title
+  try {
+    if (document.getElementById('hero')) {
+      document.title = 'コスメ山本神栖エステサロン';
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc) {
+        desc.setAttribute('content', 'コスメ山本は、神栖市のフェイシャル専門エステサロン。丁寧なカウンセリングと心地よいケアで、自然体の美しさを引き出します。');
+      }
+    }
+  } catch (_) {}
   // Hamburger
   const hamburger = document.querySelector('.hamburger-menu');
   const nav = document.getElementById('global-nav');
