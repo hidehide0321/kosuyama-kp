@@ -38,6 +38,12 @@ body {
     align-items: center;
 }
 
+/* Make nav occupy remaining space next to logo (desktop) */
+.header-nav {
+    flex: 1;
+    margin-left: 24px;
+}
+
 .header-logo a {
     text-decoration: none;
     color: var(--text-color);
@@ -52,10 +58,13 @@ body {
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: space-evenly; /* 端も含めて均等配置 */
+    gap: 0;                        /* 均等配置と干渉しないよう0に */
+    flex-wrap: nowrap;             /* デスクトップは1行を維持 */
 }
 
 .header-nav ul li {
-    margin-left: 30px;
+    margin: 0;            /* gapで統一管理 */
 }
 
 .header-nav ul li a {
@@ -852,4 +861,135 @@ textarea { resize: vertical; }
 
 @media (max-width: 768px) {
   .option-list .menu-list-image .image-slot { height: 180px; }
+}
+
+/* Empathy section (above concept) */
+.empathy .empathy-lead {
+  text-align: center;
+  color: #555;
+  max-width: 820px;
+  margin: 0 auto 18px;
+}
+.empathy .empathy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 18px;
+  max-width: 980px;
+}
+.empathy .empathy-list li {
+  background: #fff;
+  border: 1px solid #f0f2f5;
+  border-radius: 8px;
+  padding: 12px 14px 12px 40px;
+  position: relative;
+}
+.empathy .empathy-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .empathy .empathy-list { grid-template-columns: 1fr; }
+}
+
+/* (removed) PASONA section styles */
+/* SUPER Credo Section */
+.super-container {
+  font-family: var(--font-sans);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+.super-container h1 {
+  font-family: var(--font-serif);
+  font-size: 36px; /* align with .section-title */
+  font-weight: 700;
+  color: var(--heading-color, #1f2a44);
+  margin: 0 0 10px;
+}
+.super-container .subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 36px;
+  line-height: 1.7;
+}
+.super-container .section-subtitle { margin: 0 0 10px; }
+/* Bold, slightly larger SUPER keyword under subtitle */
+.super-container .super-keyword {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-family: var(--font-serif); /* S | Safety と同じ書体 */
+  font-size: 1.5rem; /* +3pt 相当（約24px） */
+  color: #555; /* S | Safety と同じ色 */
+}
+.credo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 20px;
+}
+/* 5項目時、3カラムで最終行2カードを中央寄せ */
+.credo-grid > .credo-item:nth-last-child(2):nth-child(odd) { grid-column: 2; }
+.credo-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+.credo-item h2 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #555;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin: 0 0 16px;
+}
+.credo-item h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 22px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+.credo-item ul { list-style: none; padding: 0; margin: 0; }
+.credo-item li {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: #555;
+}
+.credo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+@media (max-width: 600px) {
+  .super-container { padding: 32px 16px; }
+  .super-container h1 { font-size: 28px; }
+}
+
+/* Credo grid responsive (2カラム) */
+@media (max-width: 900px) {
+  .credo-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+  /* 最後の1枚を横幅いっぱいにして中央に */
+  .credo-grid > .credo-item:last-child {
+    grid-column: 1 / -1;
+  }
 }
