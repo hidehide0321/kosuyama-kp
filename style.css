@@ -378,6 +378,10 @@ body {
     text-align: center;
     padding: 20px 0;
 }
+.footer .footer-links { margin-top: 6px; font-size: 14px; }
+.footer .footer-links a { color: #fff; opacity: .9; text-decoration: none; margin: 0 8px; }
+.footer .footer-links a:hover { opacity: 1; text-decoration: underline; }
+.footer .footer-links .divider { color: rgba(255,255,255,.4); margin: 0 4px; }
 
 /* Menu Page */
 #menu-hero {
@@ -871,20 +875,23 @@ textarea { resize: vertical; }
   margin: 0 auto 18px;
 }
 .empathy .empathy-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 18px;
-  max-width: 980px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* 1カラムに固定 */
+    justify-items: center;      /* 各項目をセンター寄せ */
+    gap: 12px 18px;
+    max-width: 980px;
 }
 .empathy .empathy-list li {
-  background: #fff;
-  border: 1px solid #f0f2f5;
-  border-radius: 8px;
-  padding: 12px 14px 12px 40px;
-  position: relative;
+    background: #fff;
+    border: 1px solid #f0f2f5;
+    border-radius: 8px;
+    padding: 12px 14px 12px 40px;
+    position: relative;
+    width: 480px;      /* 2カラム時と同等の囲み幅を維持 */
+    max-width: 100%;   /* 端末幅が狭い場合ははみ出さない */
 }
 .empathy .empathy-list li::before {
   content: '✓';

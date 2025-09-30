@@ -10,6 +10,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Footer year (auto-insert current year if #y exists)
+  try {
+    var yEl = document.getElementById('y');
+    if (yEl) { yEl.textContent = new Date().getFullYear(); }
+  } catch (_) {}
   // Unify header navigation across all pages
   (function unifyHeaderNav() {
     try {
@@ -203,46 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (_) {}
   })();
 
-  // Empathy section: adjust first item wording per request
-  (function updateEmpathyWording() {
-    try {
-      const items = document.querySelectorAll('#empathy .empathy-list li');
-      if (!items || !items.length) return;
-      items.forEach(li => {
-        const t = (li.textContent || '').trim();
-        if (t.includes('気分が上がらない')) {
-          li.textContent = 'カガミを見るたびに、なんだか気分が上がらない';
-        }
-        // Update dullness/sagging phrasing to combined wording including pores
-        if (t.includes('くすみ') && t.includes('たるみ')) {
-          li.textContent = 'お肌のくすみやたるみ、毛穴が目立つ';
-        }
-        // Update hydration phrasing
-        if (t.includes('保湿しても乾燥')) {
-          li.textContent = '保湿しても乾燥する';
-        }
-      });
+    // Empathy wording runtime adjustments removed (handled in HTML)
 
-      // Ensure inclusion of: 忙しくて自分のケアは後回し
-      const list = document.querySelector('#empathy .empathy-list');
-      if (!list) return;
-      const hasBusy = Array.from(list.children).some(li => (li.textContent || '').includes('忙しくて自分のケアは後回し'));
-      if (!hasBusy) {
-        const target = Array.from(list.children).find(li => (li.textContent || '').includes('毛穴が目立つようになった'))
-                    || Array.from(list.children).find(li => (li.textContent || '').includes('毛穴が目立つ'))
-                    || list.lastElementChild;
-        if (target) target.textContent = '忙しくて自分のケアは後回し';
-      }
-
-      // Ensure inclusion of: 年齢だからとあきらめている
-      const hasAge = Array.from(list.children).some(li => (li.textContent || '').includes('年齢だからと'));
-      if (!hasAge) {
-        const li = document.createElement('li');
-        li.textContent = '年齢だからとあきらめている';
-        list.insertBefore(li, list.firstChild);
-      }
-    } catch (_) {}
-  })();
   // (note) PASONA runtime injection remains removed
 
   // Gallery: swap requested images and sort by number
@@ -442,3 +409,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// Force unified navigation labels and order across all pages
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    const nav = document.getElementById('global-nav');
+    if (!nav) return;
+    let ul = nav.querySelector('ul');
+    if (!ul) { ul = document.createElement('ul'); nav.appendChild(ul); }
+    const items = [
+      { href: 'index.html#concept', label: '私たちの想い' },
+      { href: 'about.html', label: 'サロン紹介' },
+      { href: 'menu.html', label: 'メニュー' },
+      { href: 'index.html#voice', label: 'お客さまの声' },
+      { href: 'index.html#gallery', label: 'ギャラリー' },
+      { href: 'index.html#access', label: 'アクセス' }
+    ];
+    ul.innerHTML = '';
+    items.forEach(it => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.setAttribute('href', it.href);
+      a.textContent = it.label;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  } catch (_) {}
+});
+
