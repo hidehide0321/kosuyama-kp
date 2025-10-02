@@ -402,6 +402,21 @@ button, .btn { min-height: 44px; }
     background-color: #6caed8;
 }
 
+/* Contact lead: show mobile-optimized two-line text only on small screens */
+#contact .contact-lead--sp { display: none; }
+@media (max-width: 600px) {
+  #contact .contact-lead--sp { display: block; }
+  /* Hide all non-SP lead paragraphs in contact section on small screens */
+  #contact .section-subtitle ~ p:not(.contact-lead--sp) { display: none !important; }
+}
+
+/* Broaden smartphone coverage (some devices >600px logical width) */
+@media (max-width: 768px) {
+  #contact .section-subtitle ~ p:not(.contact-lead--sp) { display: none !important; }
+}
+
+/* (reverted) contact-actions custom layout removed per request */
+
 /* Footer */
 .footer {
     background-color: #333;
