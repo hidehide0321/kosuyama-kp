@@ -14,7 +14,15 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.8;
+    overflow-x: hidden; /* prevent incidental horizontal scroll on mobile */
 }
+
+html { overflow-x: hidden; }
+
+/* Mobile-friendly media defaults */
+img, svg, video { max-width: 100%; height: auto; display: block; }
+iframe { max-width: 100%; }
+button, .btn { min-height: 44px; }
 
 .container {
     width: 90%;
@@ -149,6 +157,24 @@ body {
     background-color: var(--bg-light-color);
 }
 
+/* Unify hero inner width with .container (menu-like margins) */
+#hero .hero-content,
+#menu-hero .hero-content,
+#about-hero .hero-content,
+#contact-hero .hero-content {
+    width: 90%;
+    max-width: 1000px; /* keep in sync with .container */
+    margin-inline: auto;
+}
+@media (max-width: 768px) {
+    #hero .hero-content,
+    #menu-hero .hero-content,
+    #about-hero .hero-content,
+    #contact-hero .hero-content {
+        width: 95%;
+    }
+}
+
 .problem-content {
     max-width: 800px;
     margin: 0 auto;
@@ -208,6 +234,11 @@ body {
 }
 
 .bg-light {
+    background-color: var(--bg-light-color);
+}
+
+/* About: make Therapist section match REASONS background */
+.section:has(.profile) {
     background-color: var(--bg-light-color);
 }
 
@@ -467,7 +498,8 @@ body {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
+        right: 0;           /* avoid rounding-induced overflow */
+        width: auto;         /* stretch to edges without exceeding */
         background-color: var(--bg-color);
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         overflow: hidden;
@@ -998,5 +1030,11 @@ textarea { resize: vertical; }
   /* 最後の1枚を横幅いっぱいにして中央に */
   .credo-grid > .credo-item:last-child {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .credo-grid {
+    grid-template-columns: 1fr;
   }
 }
