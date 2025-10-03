@@ -17,7 +17,7 @@ body {
     overflow-x: hidden; /* prevent incidental horizontal scroll on mobile */
 }
 
-html { overflow-x: hidden; }
+html { overflow-x: hidden; scroll-padding-top: 80px; }
 
 /* Mobile-friendly media defaults */
 img, svg, video { max-width: 100%; height: auto; display: block; }
@@ -38,6 +38,10 @@ button, .btn { min-height: 44px; }
     position: sticky;
     top: 0;
     z-index: 100;
+    /* Safe area for notched devices */
+    padding-top: calc(20px + env(safe-area-inset-top));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 .header .container {
@@ -148,8 +152,15 @@ button, .btn { min-height: 44px; }
 
 #hero h1 {
     font-family: var(--font-serif);
-    font-size: 48px;
+    font-size: clamp(26px, 6vw, 48px);
     margin: 0 0 20px 0;
+}
+
+/* SP-only split title handling */
+#hero .hero-content .hero-title--sp { display: none; }
+@media (max-width: 768px) {
+  #hero .hero-content .hero-title--sp { display: block; }
+  #hero .hero-content h1:not(.hero-title--sp) { display: none !important; }
 }
 
 /* Problem Section */
@@ -516,6 +527,8 @@ button, .btn { min-height: 44px; }
         right: 0;           /* avoid rounding-induced overflow */
         width: auto;         /* stretch to edges without exceeding */
         background-color: var(--bg-color);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         overflow: hidden;
         max-height: 0;
@@ -1053,3 +1066,5 @@ textarea { resize: vertical; }
     grid-template-columns: 1fr;
   }
 }
+/* A11y: focus ring for hamburger on keyboard nav */
+.hamburger-menu:focus-visible { outline: 3px solid rgba(135,206,235,.5); border-radius: 4px; }

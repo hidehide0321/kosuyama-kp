@@ -1,15 +1,25 @@
-// Smooth scroll for intra-page anchors
+// Smooth scroll for intra-page anchors (respect reduced motion)
+const __prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: __prefersReduced ? 'auto' : 'smooth' });
     }
   });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Lazy-load non-hero images for mobile performance
+  try {
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      if (!img.closest('#hero')) {
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      }
+    });
+  } catch (_) {}
   // Footer year (auto-insert current year if #y exists)
   try {
     var yEl = document.getElementById('y');
@@ -137,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (_) {}
   // Set hero catch copy (header tagline)
   try {
-    const heroHeading = document.querySelector('#hero h1');
+    const heroHeading = document.querySelector('#hero h1:not(.hero-title--sp)');
     if (heroHeading) {
       heroHeading.textContent = '年齢を魅力に、美しさを肌にまとう';
     }
@@ -247,11 +257,13 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.addEventListener('click', function () {
       this.classList.toggle('active');
       nav.classList.toggle('active');
+      try { this.setAttribute('aria-expanded', String(nav.classList.contains('active'))); } catch(_){}
     });
     document.querySelectorAll('#global-nav a').forEach(link => {
       link.addEventListener('click', function () {
         hamburger.classList.remove('active');
         nav.classList.remove('active');
+        try { hamburger.setAttribute('aria-expanded', 'false'); } catch(_){}
       });
     });
   }
