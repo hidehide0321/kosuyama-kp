@@ -11,6 +11,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Compute and set header height as CSS variable for fixed header offset
+  try {
+    const setHeaderOffset = () => {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const h = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+    };
+    setHeaderOffset();
+    window.addEventListener('resize', setHeaderOffset, { passive: true });
+    window.addEventListener('orientationchange', setHeaderOffset, { passive: true });
+    // Recalculate after fonts or late layout changes
+    window.addEventListener('load', setHeaderOffset);
+    setTimeout(setHeaderOffset, 120);
+  } catch (_) {}
   // Lazy-load non-hero images for mobile performance
   try {
     document.querySelectorAll('img:not([loading])').forEach(img => {
