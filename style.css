@@ -148,7 +148,8 @@ button, .btn { min-height: 44px; }
 /* Hero Section */
 #hero {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
-    height: 600px;
+    /* Avoid fixed height to prevent text clipping on fluid scaling */
+    min-height: clamp(360px, 55vh, 520px);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -202,7 +203,7 @@ button, .btn { min-height: 44px; }
 
 .problem-title {
     font-family: var(--font-serif);
-    font-size: 32px;
+    font-size: clamp(20px, 5.5vw, 32px);
     margin-bottom: 30px;
 }
 
@@ -229,7 +230,7 @@ button, .btn { min-height: 44px; }
 
 .problem-solution {
     font-weight: 700;
-    font-size: 18px;
+    font-size: clamp(14px, 3.8vw, 18px);
 }
 
 
@@ -476,7 +477,7 @@ button, .btn { min-height: 44px; }
 /* Menu Page */
 #menu-hero {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
-    height: 400px;
+    min-height: clamp(280px, 45vh, 400px);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -488,7 +489,7 @@ button, .btn { min-height: 44px; }
 
 #menu-hero h1 {
     font-family: var(--font-serif);
-    font-size: 48px;
+    font-size: clamp(24px, 6vw, 48px);
     margin: 0;
 }
 
@@ -514,7 +515,7 @@ button, .btn { min-height: 44px; }
 
 .menu-list-text h3 {
     font-family: var(--font-serif);
-    font-size: 24px;
+    font-size: clamp(18px, 4.2vw, 24px);
     margin-top: 0;
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
@@ -524,7 +525,7 @@ button, .btn { min-height: 44px; }
 }
 
 .price {
-    font-size: 20px;
+    font-size: clamp(16px, 4.2vw, 20px);
     font-weight: 700;
     color: var(--text-color);
 }
@@ -586,13 +587,10 @@ button, .btn { min-height: 44px; }
         text-align: left;       /* keep text left-aligned */
     }
 
-    #hero h1 {
-        font-size: 36px;
-    }
+    /* #hero h1 uses fluid sizing via clamp() globally; do not override here */
+    /* #hero h1 { font-size: 36px; } */
 
-    .problem-title {
-        font-size: 28px;
-    }
+    /* .problem-title uses fluid sizing; no fixed override */
 
     .concept-content,
     .service-items,
@@ -634,13 +632,9 @@ button, .btn { min-height: 44px; }
         font-size: 28px;
     }
 
-    .problem-title {
-        font-size: 24px;
-    }
+    /* .problem-title fluid via clamp; no override */
 
-    .section-title {
-        font-size: 30px;
-    }
+    .section-title { font-size: clamp(22px, 5.2vw, 36px); }
 
     .gallery-images {
         grid-template-columns: 1fr;
@@ -696,7 +690,8 @@ button, .btn { min-height: 44px; }
 /* Contact page */
 #contact-hero {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/cosyama.cherie.esthe.6.png');
-    height: 300px;
+    /* Avoid fixed height to prevent clipping */
+    min-height: clamp(220px, 40vh, 360px);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -757,8 +752,8 @@ textarea { resize: vertical; }
 .section-subtitle { color: var(--muted-color); letter-spacing: 0.2em; margin-bottom: 40px; }
 
 /* Hero: lighter overlay, slightly shorter */
-#hero { background-image: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)), url('images/cosyama.cherie.esthe.6.png'); height: 520px; }
-#hero h1 { font-size: 44px; margin-bottom: 16px; }
+#hero { background-image: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)), url('images/cosyama.cherie.esthe.6.png'); min-height: clamp(360px, 55vh, 520px); }
+#hero h1 { font-size: clamp(28px, 6.5vw, 44px); margin-bottom: 16px; }
 
 /* Problem list bullet: simple dot */
 .problem-content ul li::before { content: '・'; }
@@ -781,13 +776,13 @@ textarea { resize: vertical; }
 .business-status.open { background-color: #e6f7ec; color: #0a7a3d; }
 
 @media (max-width: 768px) {
-  #hero { height: 420px; }
-  #hero h1 { font-size: 34px; }
+  #hero { min-height: clamp(360px, 55vh, 420px); }
+  /* #hero h1 fluid via clamp; no override */
   .access-map iframe { height: 340px; }
 }
 
 @media (max-width: 480px) {
-  #hero h1 { font-size: 28px; }
+  /* #hero h1 fluid via clamp; no override */
   .access-map iframe { height: 300px; }
 }
 
@@ -1090,6 +1085,31 @@ textarea { resize: vertical; }
   .super-container h1 { font-size: 28px; }
 }
 
+/* Earlier mobile nav activation to prevent header text overflow on tablets */
+@media (max-width: 1024px) {
+  .hamburger-menu { display: block; }
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    background-color: var(--bg-color);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .header-nav.active { max-height: 80vh; overflow-y: auto; }
+  .header-nav ul { flex-direction: column; padding: 20px 0; display: inline-block; text-align: left; margin-top: 0; }
+  .header-nav ul li { margin: 10px 0; }
+}
+
 /* Credo grid responsive (2カラム) */
 @media (max-width: 900px) {
   .credo-grid {
@@ -1108,3 +1128,59 @@ textarea { resize: vertical; }
 }
 /* A11y: focus ring for hamburger on keyboard nav */
 .hamburger-menu:focus-visible { outline: 3px solid rgba(135,206,235,.5); border-radius: 4px; }
+
+/* --------------------------------------------------
+   Fluid Typography (RWD-friendly smooth scaling)
+   - Scales root font-size and common headings
+   - Kept conservative to avoid layout shifts
+--------------------------------------------------- */
+html {
+  /* Base font scales from 15px (mobile) to 18px (desktop) */
+  font-size: clamp(15px, 1.6vw, 18px);
+}
+
+/* Global heading scale (overridden by more specific section rules where present) */
+h1 { font-size: clamp(28px, 6vw, 40px); }
+h2 { font-size: clamp(22px, 4.6vw, 32px); }
+h3 { font-size: clamp(18px, 3.4vw, 24px); }
+h4 { font-size: clamp(16px, 2.8vw, 20px); }
+small, .small { font-size: clamp(12px, 2.6vw, 14px); }
+
+/* Key components overriding fixed px to fluid values */
+.header-logo a { font-size: clamp(18px, 3.5vw, 24px); }
+.access-info h3 { font-size: clamp(18px, 3vw, 22px); }
+.access-info h4 { font-size: clamp(15px, 2.5vw, 18px); }
+.super-container h1 { font-size: clamp(24px, 5.2vw, 36px); }
+
+/* Button inherits fluid size; ensure comfortable minimum */
+.btn { font-size: clamp(14px, 2.8vw, 16px); line-height: 1.25; }
+
+/* --------------------------------------------------
+   Legal page (SPECIFIED COMMERCIAL TRANSACTIONS) —
+   Fluid typography tuning for dense content
+--------------------------------------------------- */
+#legal { font-size: clamp(15px, 1.6vw, 18px); }
+#legal .section-title { font-size: clamp(24px, 5.2vw, 36px); }
+#legal .section-subtitle { font-size: clamp(12px, 3.2vw, 16px); }
+#legal .updated { font-size: clamp(12px, 2.6vw, 14px); }
+
+/* Body copy and lists */
+#legal p,
+#legal li { font-size: clamp(14px, 2.6vw, 16px); line-height: 1.9; }
+
+/* Key-value grid */
+#legal .kv-item b { font-size: clamp(14px, 2.8vw, 18px); }
+#legal .kv-item div { font-size: clamp(14px, 2.6vw, 16px); }
+
+/* Details/summary blocks */
+#legal summary { font-size: clamp(15px, 2.4vw, 18px); }
+
+/* Tables */
+#legal .table th,
+#legal .table td { font-size: clamp(14px, 2.4vw, 16px); }
+
+/* Very small screens: allow footer text to wrap to avoid clipping */
+@media (max-width: 360px) {
+  .footer p { white-space: normal; line-height: 1.4; }
+  .footer .footer-links { white-space: normal; }
+}

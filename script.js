@@ -269,17 +269,30 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger-menu');
   const nav = document.getElementById('global-nav');
   if (hamburger && nav) {
+    // Toggle open/close
     hamburger.addEventListener('click', function () {
       this.classList.toggle('active');
       nav.classList.toggle('active');
       try { this.setAttribute('aria-expanded', String(nav.classList.contains('active'))); } catch(_){}
     });
-    document.querySelectorAll('#global-nav a').forEach(link => {
-      link.addEventListener('click', function () {
+
+    // Close menu when any nav link is activated (event delegation so it survives nav rebuilds)
+    nav.addEventListener('click', function (e) {
+      const a = e.target && e.target.closest('a');
+      if (!a || !nav.contains(a)) return;
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      try { hamburger.setAttribute('aria-expanded', 'false'); } catch(_){}
+    });
+
+    // Also close on focus-out via keyboard navigation when link is activated with Enter/Space
+    nav.addEventListener('keydown', function (e) {
+      const key = e.key;
+      if ((key === 'Enter' || key === ' ') && e.target && e.target.closest('a')) {
         hamburger.classList.remove('active');
         nav.classList.remove('active');
         try { hamburger.setAttribute('aria-expanded', 'false'); } catch(_){}
-      });
+      }
     });
   }
 
