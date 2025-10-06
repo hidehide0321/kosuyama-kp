@@ -9,14 +9,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <meta name="format-detection" content="telephone=no">
   <style>
-    /* Inline override to guarantee SP split is applied even under cache */
-    #hero .hero-content .hero-title--sp { display: none; }
-    @media (max-width: 768px) {
-      #hero .hero-content .hero-title--sp { display: block !important; }
-      #hero .hero-content h1:not(.hero-title--sp) { display: none !important; }
-      .br-sp { display: inline !important; }
-    }
+  /* Inline override to guarantee SP/PC behavior */
+  /* PC default: show 1-line paragraph, hide SP variant */
+  #hero .hero-content .hero-title--sp { display: none; }
+  #hero .hero-content .hero-sub       { white-space: nowrap; }
+  #hero .hero-content .hero-sub-sp    { display: none; }
+  /* SP: show split title + split paragraph, hide PC ones */
+  @media (max-width: 768px) {
+    #hero .hero-content .hero-title--sp { display: block !important; }
+    #hero .hero-content h1:not(.hero-title--sp) { display: none !important; }
+    #hero .hero-content .hero-sub { display: none !important; }
+    #hero .hero-content .hero-sub-sp { display: block !important; }
+  }
+</style>
+    <style>
+      .consult-note { margin-top: .5rem; font-size: .95rem; color: #555; line-height: 1.8; text-align: center; }
+    </style>
+  <style>
+    /* Fluid Typography (in-page) */
+    html { font-size: clamp(15px, 1.6vw, 18px); }
+    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; }
+    h2, .section-title { font-size: clamp(22px, 4.6vw, 32px); line-height: 1.3; }
+    h3 { font-size: clamp(18px, 3.4vw, 24px); line-height: 1.4; }
+    small, .small, .section-subtitle { font-size: clamp(12px, 2.6vw, 14px); letter-spacing: .06em; }
+    p, li { font-size: clamp(14px, 2.6vw, 16px); }
+    .btn, button { font-size: clamp(14px, 2.8vw, 16px); line-height: 1.25; }
   </style>
+  <style>
+  /* Empathy SP box sizing */
+  @media (max-width: 768px) {
+    #empathy .container { width: 100%; max-width: none; padding-left: 16px; padding-right: 16px; }
+    #empathy .empathy-list { width: 100%; max-width: none; box-sizing: border-box; justify-items: stretch; }
+    #empathy .empathy-list li { width: 100%; max-width: 100%; box-sizing: border-box; }
+  }
+</style>
 </head>
 <body>
   <header class="header">
@@ -47,9 +73,10 @@
     
     <section id="hero">
       <div class="hero-content">
-        <h1 class="hero-title--sp">年齢を魅力に、<br>美しさを肌にまとう</h1>
-        <h1>年齢を魅力に、美しさをまとう</h1>
-        <p>神栖でひとりひとりに寄り添う施術と心地よい空間を。</p>
+        <h1 class="hero-title--sp">肌悩みに寄り添い、<br>心まで晴れる体験を。</h1>
+        <h1>肌悩みに寄り添い、心まで晴れる体験を。</h1>
+        <p class="hero-sub">神栖でひとりひとりに寄り添う施術と心地よい空間を。</p>
+        <p class="hero-sub-sp">神栖でひとりひとりに寄り添う施術と<br>心地よい空間を。</p>
       </div>
     </section>
 
@@ -89,17 +116,17 @@
         <p class="section-subtitle">MENU</p>
         <div class="home-menu-cards">
           <div class="home-menu-card">
-            <img src="images/cosyama.cherie.esthe.6.png" alt="スタンダードコース">
+            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.10.png" alt="スタンダードコース"></a>
             <h3>スタンダードコース</h3>
             <p class="price">60分 &yen;8,800</p>
           </div>
           <div class="home-menu-card">
-            <img src="images/cosyama.cherie.esthe.10.png" alt="エイジングケアコース">
+            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.13.png" alt="エイジングケアコース"></a>
             <h3>エイジングケアコース</h3>
             <p class="price">75分 &yen;13,200</p>
           </div>
           <div class="home-menu-card">
-            <img src="images/cosyama.cherie.esthe.13.png" alt="スペシャルケアコース">
+            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.6.png" alt="スペシャルケアコース"></a>
             <h3>スペシャルケアコース</h3>
             <p class="price">90分 &yen;16,500</p>
           </div>
@@ -226,6 +253,76 @@
   </footer>
 
   <script src="script.js?v=20251003"></script>
+<script>
+// consult-note move script: place under Empathy list box
+document.addEventListener('DOMContentLoaded', function () {
+  var moveText = String.fromCharCode(0x3072,0x3068,0x3064,0x3067,0x3082,0x5F53,0x3066,0x306F,0x307E,0x3063,0x305F,0x3089,0x3001,0x79C1,0x305F,0x3061,0x306B,0x3054,0x76F8,0x8AC7,0x304F,0x3060,0x3055,0x3044,0x3002);
+  var empathy = document.querySelector('#empathy');
+  var list = empathy && empathy.querySelector('.empathy-list');
+  if (!list) return;
+  if (empathy) { empathy.querySelectorAll('.consult-note').forEach(function(el){ el.remove(); }); }
+  try {
+    var tw = document.createTreeWalker(empathy, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.nodeValue && n.nodeValue.indexOf(moveText) !== -1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var nodes = []; var x; while ((x = tw.nextNode())) nodes.push(x);
+    nodes.forEach(function (n) {
+      var p = n.parentElement; if (!p) return; if (p.childNodes.length === 1 && p.textContent.trim() === moveText) { p.remove(); }
+      else { n.nodeValue = n.nodeValue.replace(moveText, '').replace(/\s{2,}/g, ' ').trim(); }
+    });
+  } catch (e) {}
+  var note = document.createElement('p'); note.className = 'consult-note'; note.textContent = moveText; list.insertAdjacentElement('afterend', note);
+});
+</script>
+<script>
+// menuImageFixerIndex: enforce first-page menu images
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    var imgs = document.querySelectorAll('#home-menu .home-menu-card img');
+    if (imgs && imgs.length >= 3) {
+      imgs[0].setAttribute('src','images/cosyama.cherie.esthe.10.png');
+      imgs[1].setAttribute('src','images/cosyama.cherie.esthe.13.png');
+      imgs[2].setAttribute('src','images/cosyama.cherie.esthe.6.png');
+    }
+  } catch(e) {}
+});
+</script>
+<script id="boldPhrasesScript">
+  document.addEventListener('DOMContentLoaded', function () {
+    var root = document.querySelector('#empathy') || document.body;
+    var phrases = [
+      "鏡を見るたびに、なんだか気分が上がらない",
+      "以前の私と何かが違う",
+      "お肌のくすみやたるみ、毛穴が目立つ"
+    ];
+    function wrapPhrase(phrase){
+      try {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function(n){
+            return (n.nodeValue && n.nodeValue.indexOf(phrase) !== -1) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+          }
+        });
+        var nodes=[]; var x; while((x=walker.nextNode())) nodes.push(x);
+        nodes.forEach(function(n){
+          var parts = n.nodeValue.split(phrase);
+          var frag = document.createDocumentFragment();
+          for (var i=0; i<parts.length; i++){
+            if (parts[i]) frag.appendChild(document.createTextNode(parts[i]));
+            if (i < parts.length - 1){
+              var strong = document.createElement('strong');
+              strong.textContent = phrase;
+              frag.appendChild(strong);
+            }
+          }
+          if (n.parentNode) n.parentNode.replaceChild(frag, n);
+        });
+      } catch(e){}
+    }
+    phrases.forEach(wrapPhrase);
+  });
+</script>
 </body>
 </html>
 
