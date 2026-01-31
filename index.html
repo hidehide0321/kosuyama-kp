@@ -1,120 +1,267 @@
-﻿  <style>
-    /* Before/After cards */
+﻿<style>
+  /* Before/After cards */
+  #before-after .before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  #before-after .ba-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+  }
+
+  #before-after .ba-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  #before-after .ba-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  #before-after .ba-cap {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 4px;
+    letter-spacing: .06em;
+  }
+
+  @media (max-width: 900px) {
     #before-after .before-after-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr;
     }
-    #before-after .ba-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05);
-    }
-    #before-after .ba-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      align-items: stretch;
-    }
-    #before-after .ba-images img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 6px;
-    }
-    #before-after .ba-cap {
-      display: block;
-      font-size: 12px;
-      color: #666;
-      text-align: center;
-      margin-top: 4px;
-      letter-spacing: .06em;
-    }
-    @media (max-width: 900px) {
-      #before-after .before-after-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  }
+</style>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>コスメ山本神栖エステサロン</title>
   <meta name="description" content="コスメ山本は、神栖市のフェイシャル専門エステサロン。丁寧なカウンセリングと心地よいケアで、自然体の美しさを引き出します。">
   <link rel="stylesheet" href="style.css?v=20251003">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet">
   <meta name="format-detection" content="telephone=no">
   <style>
-  /* Inline override to guarantee SP/PC behavior */
-  /* PC default: show 1-line paragraph, hide SP variant */
-  #hero .hero-content .hero-title--sp { display: none; }
-  #hero .hero-content .hero-sub       { white-space: nowrap; }
-  #hero .hero-content .hero-sub-sp    { display: none; }
-  /* SP: show split title + split paragraph, hide PC ones */
-  @media (max-width: 768px) {
-    #hero .hero-content .hero-title--sp { display: block !important; }
-    #hero .hero-content h1:not(.hero-title--sp) { display: none !important; }
-    #hero .hero-content .hero-sub { display: none !important; }
-    #hero .hero-content .hero-sub-sp { display: block !important; }
-  }
-</style>
-    <style>
-      .consult-note { margin-top: .5rem; font-size: .95rem; color: #555; line-height: 1.8; text-align: center; }
-    </style>
+    /* Inline override to guarantee SP/PC behavior */
+    /* PC default: show 1-line paragraph, hide SP variant */
+    #hero .hero-content .hero-title--sp {
+      display: none;
+    }
+
+    #hero .hero-content .hero-sub {
+      white-space: nowrap;
+    }
+
+    #hero .hero-content .hero-sub-sp {
+      display: none;
+    }
+
+    /* SP: show split title + split paragraph, hide PC ones */
+    @media (max-width: 768px) {
+      #hero .hero-content .hero-title--sp {
+        display: block !important;
+      }
+
+      #hero .hero-content h1:not(.hero-title--sp) {
+        display: none !important;
+      }
+
+      #hero .hero-content .hero-sub {
+        display: none !important;
+      }
+
+      #hero .hero-content .hero-sub-sp {
+        display: block !important;
+      }
+    }
+  </style>
+  <style>
+    .consult-note {
+      margin-top: .5rem;
+      font-size: .95rem;
+      color: #555;
+      line-height: 1.8;
+      text-align: center;
+    }
+  </style>
   <style>
     /* Fluid Typography (in-page) */
-    html { font-size: clamp(15px, 1.6vw, 18px); }
-    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; }
-    h2, .section-title { font-size: clamp(22px, 4.6vw, 32px); line-height: 1.3; }
-    h3 { font-size: clamp(18px, 3.4vw, 24px); line-height: 1.4; }
-    small, .small, .section-subtitle { font-size: clamp(12px, 2.6vw, 14px); letter-spacing: .06em; }
-    p, li { font-size: clamp(14px, 2.6vw, 16px); }
-    .btn, button { font-size: clamp(14px, 2.8vw, 16px); line-height: 1.25; }
+    html {
+      font-size: clamp(15px, 1.6vw, 18px);
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.2;
+    }
+
+    h2,
+    .section-title {
+      font-size: clamp(22px, 4.6vw, 32px);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: clamp(18px, 3.4vw, 24px);
+      line-height: 1.4;
+    }
+
+    small,
+    .small,
+    .section-subtitle {
+      font-size: clamp(12px, 2.6vw, 14px);
+      letter-spacing: .06em;
+    }
+
+    p,
+    li {
+      font-size: clamp(14px, 2.6vw, 16px);
+    }
+
+    .btn,
+    button {
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.25;
+    }
   </style>
   <style>
-  /* Empathy SP box sizing */
-  @media (max-width: 768px) {
-    #empathy .container { width: 100%; max-width: none; padding-left: 16px; padding-right: 16px; }
-    #empathy .empathy-list { width: 100%; max-width: none; box-sizing: border-box; justify-items: stretch; }
-    #empathy .empathy-list li { width: 100%; max-width: 100%; box-sizing: border-box; }
-  }
-</style>
+    /* Empathy SP box sizing */
+    @media (max-width: 768px) {
+      #empathy .container {
+        width: 100%;
+        max-width: none;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      #empathy .empathy-list {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        justify-items: stretch;
+      }
+
+      #empathy .empathy-list li {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
   <style>
     /* Voice disclaimers (tiny caution note) */
-    .voice-disclaimer { font-size: 8px !important; line-height: 1.6; color: #666; text-align: center; margin-top: 8px; }
+    .voice-disclaimer {
+      font-size: 8px !important;
+      line-height: 1.6;
+      color: #666;
+      text-align: center;
+      margin-top: 8px;
+    }
   </style>
-<style>
-  /* ホームのエステメニュー: PCで4列、SPで1列 */
-  #home-menu .home-menu-cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-  }
-  @media (max-width: 900px) {
-    #home-menu .home-menu-cards { grid-template-columns: 1fr; }
-  }
-</style>
-<style>
-  /* リフトアップ肩こりほぐし（2行見出し）の行間最適化 */
-  #home-menu .home-menu-card.liftup-course h3 {
-    line-height: 1.15;
-    margin: 0;
-  }
-  #home-menu .home-menu-card.liftup-course h3 + h3 {
-    margin-top: 2px;
-    margin-bottom: 10px; /* 価格との間だけ少し余白 */
-  }
-</style>
   <style>
-  /* Before/After: figureのオーバーフロー制御 */
-  #before-after .ba-images figure { overflow: visible; }
-</style>
+    /* メニューカードの文字サイズ調整（ユーザー要望により拡大） */
+    #home-menu .home-menu-card {
+      padding: 16px 8px;
+      /* パディングを詰めて文字領域確保 */
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      /* カードの高さを揃える(Gridと併用で有効) */
+    }
+
+    #home-menu .home-menu-card h3 {
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    #home-menu .home-menu-card .price {
+      font-size: 17px !important;
+      margin-bottom: 4px;
+      margin-top: auto;
+      /* 価格を可能な限り下に押し下げる */
+    }
+
+    /* 初回限定価格 */
+    #home-menu .home-menu-card p:last-of-type {
+      font-size: 21px !important;
+      line-height: 1.2;
+    }
+
+    /* SP (900px以下) */
+    @media (max-width: 900px) {
+      #home-menu .home-menu-card h3 {
+        font-size: 24px;
+      }
+
+      #home-menu .home-menu-card .price {
+        font-size: 20px !important;
+      }
+
+      #home-menu .home-menu-card p:last-of-type {
+        font-size: 28px !important;
+      }
+    }
+  </style>
+  <style>
+    /* ホームのエステメニュー: PCで4列、SPで1列 */
+    #home-menu .home-menu-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      #home-menu .home-menu-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style>
+    /* リフトアップ肩こりほぐし（2行見出し）の行間最適化 */
+    #home-menu .home-menu-card.liftup-course h3 {
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    #home-menu .home-menu-card.liftup-course h3+h3 {
+      margin-top: 2px;
+      margin-bottom: 10px;
+      /* 価格との間だけ少し余白 */
+    }
+  </style>
+  <style>
+    /* Before/After: figureのオーバーフロー制御 */
+    #before-after .ba-images figure {
+      overflow: visible;
+    }
+  </style>
   <style>
     /* Before/After 拡大用の縦サイズ確保 */
-    #before-after .ba-zoom { min-height: 280px; }
-    @media (max-width: 900px) { #before-after .ba-zoom { min-height: 200px; } }
+    #before-after .ba-zoom {
+      min-height: 280px;
+    }
+
+    @media (max-width: 900px) {
+      #before-after .ba-zoom {
+        min-height: 200px;
+      }
+    }
   </style>
   <style>
     /* Before/After: 1・2枚目 画像サイズ指定 */
@@ -123,11 +270,17 @@
       width: auto;
       aspect-ratio: 4 / 1;
       transform: none !important;
-    }</style>
+    }
+  </style>
   <style>
     /* Voice: 画像の拡大比率に合わせて横幅を拡張（縦150px）*/
-    #voice .voice-image-before, #voice .voice-image-after { overflow: visible; }
-    #voice .voice-image-before img, #voice .voice-image-after img {
+    #voice .voice-image-before,
+    #voice .voice-image-after {
+      overflow: visible;
+    }
+
+    #voice .voice-image-before img,
+    #voice .voice-image-after img {
       height: 150px;
       width: auto !important;
       max-width: none !important;
@@ -161,12 +314,25 @@
   </style>
   <style>
     /* Before/After: 単枚画像を中央配置＆カード幅にフィット */
-    #before-after .ba-images .ba-single { grid-column: 1 / -1; display:flex; justify-content:center; align-items:center; }
-    #before-after .ba-images .ba-single img { width: 90% !important; height: auto !important; max-width: 90% !important; }
+    #before-after .ba-images .ba-single {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #before-after .ba-images .ba-single img {
+      width: 90% !important;
+      height: auto !important;
+      max-width: 90% !important;
+    }
   </style>
   <style>
     /* Before/After: 各カードを90%幅・中央寄せ */
-    #before-after .ba-card { width: 90%; margin: 0 auto; }
+    #before-after .ba-card {
+      width: 90%;
+      margin: 0 auto;
+    }
   </style>
   <style>
     /* Before/After: 1枚目カードの写真を90% */
@@ -196,15 +362,57 @@
 
   <style>
     /* Voice cards: 上段4・下段3、SPは1カラム */
-    #voice .voice-group { margin-top: 18px; }
-    #voice .voice-cards { display: grid; gap: 16px; }
-    #voice .voice-cards.voice-cards-4 { grid-template-columns: repeat(4, 1fr); }
-    #voice .voice-cards.voice-cards-3 { grid-template-columns: repeat(3, 1fr); }
-    #voice .voice-card { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-    #voice .voice-card .voice-title { font-weight: 700; margin: 0 0 6px; font-size: 16px; }
-    #voice .voice-card .voice-meta { color: #666; font-size: 12px; margin: 0 0 8px; }
-    #voice .voice-card .voice-text { font-size: 14px; line-height: 1.7; margin: 0; }
-    @media (max-width: 900px) { #voice .voice-cards { grid-template-columns: 1fr; } }
+    #voice .voice-group {
+      margin-top: 18px;
+    }
+
+    #voice .voice-cards {
+      display: grid;
+      gap: 16px;
+    }
+
+    #voice .voice-cards.voice-cards-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    #voice .voice-cards.voice-cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    #voice .voice-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+    }
+
+    #voice .voice-card .voice-title {
+      font-weight: 700;
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    #voice .voice-card .voice-meta {
+      color: #666;
+      font-size: 12px;
+      margin: 0 0 8px;
+    }
+
+    #voice .voice-card .voice-text {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+
+      #voice .voice-cards,
+      #voice .voice-cards.voice-cards-4,
+      #voice .voice-cards.voice-cards-3 {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <style>
     /* Before/After: 1枚目画像は元の縦横比を保持 */
@@ -217,12 +425,17 @@
   <style>
     /* Before/After: 1枚目画像をカード内に収める（拡大しすぎず比率維持） */
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-single img {
-      max-width: 100% !important;  /* カード幅を超えない */
-      width: auto !important;      /* 元サイズ以上に拡大しない */
-      height: auto !important;     /* 縦横比維持 */
-      object-fit: contain;         /* 枠内に収める */
+      max-width: 100% !important;
+      /* カード幅を超えない */
+      width: auto !important;
+      /* 元サイズ以上に拡大しない */
+      height: auto !important;
+      /* 縦横比維持 */
+      object-fit: contain;
+      /* 枠内に収める */
       display: block;
-      margin: 0;                   /* 余白はカードpadding（12px）に委譲 */
+      margin: 0;
+      /* 余白はカードpadding（12px）に委譲 */
     }
   </style>
   <style>
@@ -237,7 +450,11 @@
   </style>
   <style>
     /* Before/After: 1枚目の画像を110%拡大（比率維持・中央、はみ出し非表示） */
-    #before-after .before-after-grid .ba-card:nth-child(1) .ba-single { overflow: hidden; border-radius: 6px; }
+    #before-after .before-after-grid .ba-card:nth-child(1) .ba-single {
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-single img {
       width: 100% !important;
       height: auto !important;
@@ -248,7 +465,10 @@
   </style>
   <style>
     /* Before/After: 1枚目画像を110%拡大（既存の transform:none !important を上書き） */
-    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single { overflow: hidden; }
+    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single {
+      overflow: hidden;
+    }
+
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single img {
       width: 100% !important;
       height: auto !important;
@@ -271,6 +491,7 @@
       transform-origin: center center !important;
       z-index: 3;
     }
+
     /* 画像側のスケールは打ち消して二重拡大を避ける */
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single img {
       transform: none !important;
@@ -278,8 +499,14 @@
   </style>
   <style>
     /* Before/After: カードサイズは維持、画像貼り付けスペースのみ拡大（約121%） */
-    #before-after .before-after-grid .ba-card:nth-child(1) { transform: none !important; }
-    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single { overflow: hidden; }
+    #before-after .before-after-grid .ba-card:nth-child(1) {
+      transform: none !important;
+    }
+
+    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single {
+      overflow: hidden;
+    }
+
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single img {
       width: 100% !important;
       height: auto !important;
@@ -290,17 +517,27 @@
   </style>
   <style>
     /* Before/After: 1枚目はカードサイズ維持のまま、写真配置枠だけ同比率拡大（見切れ無し） */
-    #before-after .before-after-grid .ba-card:nth-child(1) { transform: none !important; }
-    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single {
-      transform: scale(1.21) !important;      /* 高さ・横幅とも同比率拡大 */
-      transform-origin: center center !important;
-      overflow: visible !important;            /* 見切れを防ぎ、枠外へにじませる */
+    #before-after .before-after-grid .ba-card:nth-child(1) {
+      transform: none !important;
     }
+
+    #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single {
+      transform: scale(1.21) !important;
+      /* 高さ・横幅とも同比率拡大 */
+      transform-origin: center center !important;
+      overflow: visible !important;
+      /* 見切れを防ぎ、枠外へにじませる */
+    }
+
     #before-after .before-after-grid .ba-card:nth-child(1) .ba-images .ba-single img {
-      width: 100% !important;                  /* 枠に対して最大表示 */
-      height: auto !important;                 /* 縦横比維持 */
-      transform: none !important;              /* 画像側の拡大は無効化（枠のみ拡大） */
-      object-fit: contain !important;          /* 比率維持で収める */
+      width: 100% !important;
+      /* 枠に対して最大表示 */
+      height: auto !important;
+      /* 縦横比維持 */
+      transform: none !important;
+      /* 画像側の拡大は無効化（枠のみ拡大） */
+      object-fit: contain !important;
+      /* 比率維持で収める */
     }
   </style>
   <style>
@@ -312,12 +549,16 @@
   </style>
   <style>
     /* Before/After: 1～3枚目 同一仕様（配置枠スケール・画像仕様） */
-    #before-after .before-after-grid .ba-card:nth-child(-n+3) .ba-images figure { margin: 0; }
+    #before-after .before-after-grid .ba-card:nth-child(-n+3) .ba-images figure {
+      margin: 0;
+    }
+
     #before-after .before-after-grid .ba-card:nth-child(-n+3) .ba-images .ba-single {
       transform: scale(1.31) !important;
       transform-origin: center center !important;
       overflow: visible !important;
     }
+
     #before-after .before-after-grid .ba-card:nth-child(-n+3) .ba-images .ba-single img {
       width: 100% !important;
       height: auto !important;
@@ -332,6 +573,7 @@
       transform: scale(0.9) !important;
       transform-origin: center center !important;
     }
+
     /* カードサイズは維持。画像は比率維持で枠に追随 */
     #before-after .before-after-grid .ba-card:nth-child(-n+3) .ba-images .ba-single img {
       width: 100% !important;
@@ -340,16 +582,18 @@
       transform: none !important;
       display: block;
     }
-  </style></head>
+  </style>
+</head>
+
 <body>
   <div id="site-header"></div>
 
   <main>
-    
+
     <section id="hero">
       <div class="hero-content">
         <h1 class="hero-title--sp">肌悩みに寄り添い、<br>心まで晴れる体験を。</h1>
-        <h1>肌悩みに寄り添い、心まで晴れる体験を。</h1>          
+        <h1>肌悩みに寄り添い、心まで晴れる体験を。</h1>
         <p class="hero-sub">神栖でひとりひとりに寄り添う施術と心地よい空間を。</p>
         <p class="hero-sub-sp">神栖でひとりひとりに寄り添う施術と<br>心地よい空間を。</p>
       </div>
@@ -374,7 +618,8 @@
         <p class="section-subtitle">CONCEPT</p>
         <div class="concept-content">
           <div class="concept-text">
-            <h3>肌悩みに寄り添い、心まで晴れる体験を。</h3>          <p class="section-subtitle" style="font-size: 21px;">エステ以上の満足で医療より優しく</p>
+            <h3>肌悩みに寄り添い、心まで晴れる体験を。</h3>
+            <p class="section-subtitle" style="font-size: 21px;">エステ以上の満足で医療より優しく</p>
             <p>丁寧なヒアリングで今の状態を見極め、あなたに合う最適なケアをご提案。無理なく続けられるホームケアまで含め、キレイが続く仕組みを一緒に作ります。</p>
             <p>最新機器と手技を組み合わせた施術で、めぐりを促し、うるおいとハリのある素肌へ。リラックスできる穏やかな空間で、心も身体もふっと軽く。</p>
           </div>
@@ -393,24 +638,32 @@
           <div class="home-menu-card">
             <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.10.png" alt="美肌コース"></a>
             <h3>美肌コース</h3>
-            <p class="price">60分 ￥8,000</p>
+            <p class="price" style="color: #333;">60分 ￥8,000</p>
+            <p style="color: #87CEEB; font-weight: bold; margin-top: 5px;">【初回限定】¥3,000</p>
           </div>
           <div class="home-menu-card liftup-course">
-            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.13.png" alt="リフトアップ肩こりほぐしコース"></a>
-            <h3>リフトアップ</h3><h3>肩こりほぐしコース</h3>
-            <p class="price">90分￥18,500</p>
+            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.13.png"
+                alt="リフトアップ肩こりほぐしコース"></a>
+            <h3>リフトアップ</h3>
+            <h3>肩こりほぐしコース</h3>
+            <p class="price" style="color: #333;">90分￥18,500</p>
+            <p style="color: #87CEEB; font-weight: bold; margin-top: 5px;">【初回限定】¥9,500</p>
           </div>
           <div class="home-menu-card">
             <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.6.png" alt="シミケアコース"></a>
             <h3>シミケアコース</h3>
-            <p class="price">70分￥16,000</p>
+            <p class="price" style="color: #333;">70分￥16,000</p>
+            <p style="color: #87CEEB; font-weight: bold; margin-top: 5px;">【初回限定】¥8,000</p>
           </div>
           <div class="home-menu-card">
-            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.11.png" alt="タルミ改善小顔コース"></a>
+            <a href="menu.html" class="menu-thumb-link"><img src="images/cosyama.cherie.esthe.11.png"
+                alt="タルミ改善小顔コース"></a>
             <h3>タルミ改善小顔コース</h3>
-            <p class="price">70分￥14,000</p>
+            <p class="price" style="color: #333;">70分￥14,000</p>
+            <p style="color: #87CEEB; font-weight: bold; margin-top: 5px;">【初回限定】¥7,000</p>
           </div>
-        </div>          <p style="text-align: center;">※価格は税抜表示</p>
+        </div>
+        <p style="text-align: center;">※価格は税抜表示</p>
         <div class="home-menu-actions" style="text-align:center; margin-top: 18px;">
           <a href="menu.html" class="btn">メニューの詳細を見る</a>
         </div>
@@ -425,7 +678,8 @@
             <article class="voice-card" aria-label="お客様の声1">
               <p class="voice-title">家族が驚く即効性！たるみもスッキリ施術直後から肌がしっとり</p>
               <p class="voice-meta">30代・女性 / フェイシャル</p>
-              <p class="voice-text">家族が驚くほど<strong>顔がシャープに小さく！</strong> たるみもスッキリの<strong>即効性を実感</strong>。たるみにお悩みの方に断然おすすめです！</p>
+              <p class="voice-text">家族が驚くほど<strong>顔がシャープに小さく！</strong>
+                たるみもスッキリの<strong>即効性を実感</strong>。たるみにお悩みの方に断然おすすめです！</p>
             </article>
             <article class="voice-card" aria-label="お客様の声2">
               <p class="voice-title">体の奥から温まり、滑らかな上半身に</p>
@@ -435,7 +689,9 @@
             <article class="voice-card" aria-label="お客様の声3">
               <p class="voice-title">肩こり解消＆目元パッチリ！最高のご褒美</p>
               <p class="voice-meta">20代・女性 / 角質ケア</p>
-              <p class="voice-text">温かく超絶気持ちいい！<strong> 1回で肩こりが軽くなり</strong>、フェイスラインと目元もスッキリ！ <strong>疲れを取る最高のご褒美</strong>です。</p>
+              <p class="voice-text">温かく超絶気持ちいい！<strong> 1回で肩こりが軽くなり</strong>、フェイスラインと目元もスッキリ！
+                <strong>疲れを取る最高のご褒美</strong>です。
+              </p>
             </article>
             <article class="voice-card" aria-label="お客様の声4">
               <p class="voice-title">マッサージ以上の感動！長年のシミにも変化が</p>
@@ -450,21 +706,28 @@
             <article class="voice-card" aria-label="お客様の声A">
               <p class="voice-title">長年の信頼！お肌の基礎を教えてくれるお店</p>
               <p class="voice-meta">リピーター / 13年</p>
-              <p class="voice-text"><strong>数年通っています</strong>が、いつも親切なスタッフの皆様に癒されます。<strong>お肌の基礎を教えてくれる</strong>安心しておまかせできるお店です。</p>
+              <p class="voice-text">
+                <strong>数年通っています</strong>が、いつも親切なスタッフの皆様に癒されます。<strong>お肌の基礎を教えてくれる</strong>安心しておまかせできるお店です。
+              </p>
             </article>
             <article class="voice-card" aria-label="お客様の声B">
               <p class="voice-title">親切な接客と個室で心からリラックス</p>
               <p class="voice-meta">リピーター / 月2回</p>
-              <p class="voice-text"><strong>感じの良いお店の雰囲気</strong>で安心して施術を受けられました。<strong>個室でリラックス</strong>でき、スタッフさんの<strong>親切な接客にも大満足</strong>です。</p>
+              <p class="voice-text">
+                <strong>感じの良いお店の雰囲気</strong>で安心して施術を受けられました。<strong>個室でリラックス</strong>でき、スタッフさんの<strong>親切な接客にも大満足</strong>です。
+              </p>
             </article>
             <article class="voice-card" aria-label="お客様の声C">
               <p class="voice-title">初めてでも安心！丁寧な説明で不安なし</p>
               <p class="voice-meta">ブライダル前ケア</p>
-              <p class="voice-text">スタッフさんが<strong>丁寧に説明してくれた</strong>ので、初めての体験でも<strong>とても安心して</strong>施術を受けることができました。</p>
+              <p class="voice-text">スタッフさんが<strong>丁寧に説明してくれた</strong>ので、初めての体験でも<strong>とても安心して</strong>施術を受けることができました。
+              </p>
             </article>
-          </div>          <p style="font-size: 8px; text-align: center;">お客様の感想であり、効果には個人差があります。</p>
-        
-          <p style="font-size: 8px; text-align: center;">あくまで個人の感想であり、全ての方に同様の効果を保証するものではありません。</p></div>
+          </div>
+          <p style="font-size: 8px; text-align: center;">お客様の感想であり、効果には個人差があります。</p>
+
+          <p style="font-size: 8px; text-align: center;">あくまで個人の感想であり、全ての方に同様の効果を保証するものではありません。</p>
+        </div>
       </div>
     </section>
 
@@ -475,15 +738,15 @@
         <p class="section-subtitle">before / after</p>
         <div class="before-after-grid">
           <article class="ba-card">
-                        <div class="ba-images">
+            <div class="ba-images">
               <figure class="ba-single">
                 <img src="images/HK3.png" alt="ビフォアー写真" />
               </figure>
             </div>
           </article>
-          
+
           <article class="ba-card">
-                        <div class="ba-images">
+            <div class="ba-images">
               <figure class="ba-single">
                 <img src="images/HK4.png" alt="ビフォアー写真" />
               </figure>
@@ -491,16 +754,18 @@
           </article>
           </article>
           <article class="ba-card">
-                        <div class="ba-images">
+            <div class="ba-images">
               <figure class="ba-single">
                 <img src="images/シミケア2.png" alt="ビフォアー写真" />
               </figure>
             </div>
           </article>
-          
+
         </div>
-      
-          <p style="font-size: 8px; text-align: center;">お客様の感想であり、効果には個人差があります。</p>          <p style="font-size: 8px; text-align: center;">あくまで個人の感想であり、全ての方に同様の効果を保証するものではありません。</p></div>
+
+        <p style="font-size: 8px; text-align: center;">お客様の感想であり、効果には個人差があります。</p>
+        <p style="font-size: 8px; text-align: center;">あくまで個人の感想であり、全ての方に同様の効果を保証するものではありません。</p>
+      </div>
     </section>
 
 
@@ -525,13 +790,33 @@
       </div>
     </section>
 
+    <section id="sns-links" class="section">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">公式SNS</h2>
+        <p class="section-subtitle">FOLLOW US</p>
+        <p style="margin-bottom: 24px;">最新情報やお得なキャンペーン情報を配信中！</p>
+        <div class="sns-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="btn"
+            style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; min-width: 240px; border: none; font-size: 16px;">
+            <span style="margin-right:8px;">📷</span>Instagram
+          </a>
+          <a href="#" class="btn"
+            style="background-color: #06c755; color: white; min-width: 240px; border: none; font-size: 16px;">
+            <span style="margin-right:8px;">💬</span>LINE公式アカウント
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="access" class="section bg-light">
       <div class="container">
         <h2 class="section-title">アクセス</h2>
         <p class="section-subtitle">ACCESS</p>
         <div class="access-content">
           <div class="access-map">
-            <iframe src="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m&output=embed" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="コスメ山本の地図"></iframe>
+            <iframe src="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m&output=embed" width="100%"
+              height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              aria-label="コスメ山本の地図"></iframe>
           </div>
           <div class="access-info">
             <p><strong>コスメ山本</strong></p>
@@ -541,7 +826,8 @@
             <p>TEL: <a href="tel:0299960033">0299-96-0033</a></p>
             <div class="info-inline store-brief" aria-label="店舗情報">
               <ul style="list-style:none; padding:0; margin:8px 0 0;">
-                <li>住所: <a href="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m" target="_blank" rel="noopener">Googleマップで開く</a></li>
+                <li>住所: <a href="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m" target="_blank"
+                    rel="noopener">Googleマップで開く</a></li>
                 <li>ご予約: お電話 <a href="tel:0299960033">0299-96-0033</a> または <a href="contact.html">フォーム</a></li>
                 <li>営業時間: 10:00–18:30 / 定休日: 日・月</li>
                 <li id="store-parking"></li>
@@ -561,7 +847,7 @@
         <p>ご予約、ご相談、メニューのご質問などお気軽にご連絡ください。</p>
         <div style="display:flex; gap:12px; flex-wrap: wrap; justify-content:center;">
           <a href="tel:0299960033" class="btn">電話でお問合せ</a>
-          <a href="contact.html" class="btn">メールでお問合せ</a>
+          <a href="contact.html" class="btn">ご予約はこちらから</a>
         </div>
       </div>
     </section>
@@ -579,153 +865,78 @@
   </footer>
 
   <script src="script.js?v=20251003"></script>
-<script>
-// consult-note move script: place under Empathy list box
-document.addEventListener('DOMContentLoaded', function () {
-  var moveText = String.fromCharCode(0x3072,0x3068,0x3064,0x3067,0x3082,0x5F53,0x3066,0x306F,0x307E,0x3063,0x305F,0x3089,0x3001,0x79C1,0x305F,0x3061,0x306B,0x3054,0x76F8,0x8AC7,0x304F,0x3060,0x3055,0x3044,0x3002);
-  var empathy = document.querySelector('#empathy');
-  var list = empathy && empathy.querySelector('.empathy-list');
-  if (!list) return;
-  if (empathy) { empathy.querySelectorAll('.consult-note').forEach(function(el){ el.remove(); }); }
-  try {
-    var tw = document.createTreeWalker(empathy, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (n) {
-        return n.nodeValue && n.nodeValue.indexOf(moveText) !== -1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-      }
-    });
-    var nodes = []; var x; while ((x = tw.nextNode())) nodes.push(x);
-    nodes.forEach(function (n) {
-      var p = n.parentElement; if (!p) return; if (p.childNodes.length === 1 && p.textContent.trim() === moveText) { p.remove(); }
-      else { n.nodeValue = n.nodeValue.replace(moveText, '').replace(/\s{2,}/g, ' ').trim(); }
-    });
-  } catch (e) {}
-  var note = document.createElement('p'); note.className = 'consult-note'; note.textContent = moveText; list.insertAdjacentElement('afterend', note);
-});
-</script>
-<script>
-// menuImageFixerIndex: enforce first-page menu images
-document.addEventListener('DOMContentLoaded', function(){
-  try {
-    var imgs = document.querySelectorAll('#home-menu .home-menu-card img');
-    if (imgs && imgs.length >= 3) {
-      imgs[0].setAttribute('src','images/cosyama.cherie.esthe.10.png');
-      imgs[1].setAttribute('src','images/cosyama.cherie.esthe.13.png');
-      imgs[2].setAttribute('src','images/cosyama.cherie.esthe.6.png');
-    }
-  } catch(e) {}
-});
-</script>
-<script id="boldPhrasesScript">
-  document.addEventListener('DOMContentLoaded', function () {
-    var root = document.querySelector('#empathy') || document.body;
-    var phrases = [
-      "鏡を見るたびに、なんだか気分が上がらない",
-      "以前の私と何かが違う",
-      "お肌のくすみやたるみ、毛穴が目立つ"
-    ];
-    function wrapPhrase(phrase){
+  <script>
+    // consult-note move script: place under Empathy list box
+    document.addEventListener('DOMContentLoaded', function () {
+      var moveText = String.fromCharCode(0x3072, 0x3068, 0x3064, 0x3067, 0x3082, 0x5F53, 0x3066, 0x306F, 0x307E, 0x3063, 0x305F, 0x3089, 0x3001, 0x79C1, 0x305F, 0x3061, 0x306B, 0x3054, 0x76F8, 0x8AC7, 0x304F, 0x3060, 0x3055, 0x3044, 0x3002);
+      var empathy = document.querySelector('#empathy');
+      var list = empathy && empathy.querySelector('.empathy-list');
+      if (!list) return;
+      if (empathy) { empathy.querySelectorAll('.consult-note').forEach(function (el) { el.remove(); }); }
       try {
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-          acceptNode: function(n){
-            return (n.nodeValue && n.nodeValue.indexOf(phrase) !== -1) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        var tw = document.createTreeWalker(empathy, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (n) {
+            return n.nodeValue && n.nodeValue.indexOf(moveText) !== -1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
           }
         });
-        var nodes=[]; var x; while((x=walker.nextNode())) nodes.push(x);
-        nodes.forEach(function(n){
-          var parts = n.nodeValue.split(phrase);
-          var frag = document.createDocumentFragment();
-          for (var i=0; i<parts.length; i++){
-            if (parts[i]) frag.appendChild(document.createTextNode(parts[i]));
-            if (i < parts.length - 1){
-              var strong = document.createElement('strong');
-              strong.textContent = phrase;
-              frag.appendChild(strong);
+        var nodes = []; var x; while ((x = tw.nextNode())) nodes.push(x);
+        nodes.forEach(function (n) {
+          var p = n.parentElement; if (!p) return; if (p.childNodes.length === 1 && p.textContent.trim() === moveText) { p.remove(); }
+          else { n.nodeValue = n.nodeValue.replace(moveText, '').replace(/\s{2,}/g, ' ').trim(); }
+        });
+      } catch (e) { }
+      var note = document.createElement('p'); note.className = 'consult-note'; note.textContent = moveText; list.insertAdjacentElement('afterend', note);
+    });
+  </script>
+  <script>
+    // menuImageFixerIndex: enforce first-page menu images
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        var imgs = document.querySelectorAll('#home-menu .home-menu-card img');
+        if (imgs && imgs.length >= 3) {
+          imgs[0].setAttribute('src', 'images/cosyama.cherie.esthe.10.png');
+          imgs[1].setAttribute('src', 'images/cosyama.cherie.esthe.13.png');
+          imgs[2].setAttribute('src', 'images/cosyama.cherie.esthe.6.png');
+        }
+      } catch (e) { }
+    });
+  </script>
+  <script id="boldPhrasesScript">
+    document.addEventListener('DOMContentLoaded', function () {
+      var root = document.querySelector('#empathy') || document.body;
+      var phrases = [
+        "鏡を見るたびに、なんだか気分が上がらない",
+        "以前の私と何かが違う",
+        "お肌のくすみやたるみ、毛穴が目立つ"
+      ];
+      function wrapPhrase(phrase) {
+        try {
+          var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+            acceptNode: function (n) {
+              return (n.nodeValue && n.nodeValue.indexOf(phrase) !== -1) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
             }
-          }
-          if (n.parentNode) n.parentNode.replaceChild(frag, n);
-        });
-      } catch(e){}
-    }
-    phrases.forEach(wrapPhrase);
-  });
-</script>
+          });
+          var nodes = []; var x; while ((x = walker.nextNode())) nodes.push(x);
+          nodes.forEach(function (n) {
+            var parts = n.nodeValue.split(phrase);
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < parts.length; i++) {
+              if (parts[i]) frag.appendChild(document.createTextNode(parts[i]));
+              if (i < parts.length - 1) {
+                var strong = document.createElement('strong');
+                strong.textContent = phrase;
+                frag.appendChild(strong);
+              }
+            }
+            if (n.parentNode) n.parentNode.replaceChild(frag, n);
+          });
+        } catch (e) { }
+      }
+      phrases.forEach(wrapPhrase);
+    });
+  </script>
 
   <script src="scripts/header-include.js" defer></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
