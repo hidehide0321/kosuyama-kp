@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,25 +8,120 @@
   <meta name="description" content="Cosme Yamamotoのサロン紹介。理念・特徴・セラピスト紹介など、初めての方にもわかりやすくご案内します。">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="style.css?v=20251003">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet">
   <style>
-    #about-hero { background:#f8fafc; padding:64px 0; text-align:center; }
-    #about-hero .hero-content h1 { font-family: var(--font-serif); font-size: clamp(28px, 2.2vw + 1rem, 40px); margin: 0 0 8px; color: var(--heading-color, #1f2a44); }
-    #about-hero .hero-content p { color: #667; margin: 0; letter-spacing: .2em; }
-    .profile { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
-    .profile .photo { flex: 0 0 280px; }
-    .profile .photo img { width: 100%; height: auto; border-radius: 8px; display: block; }
-    .profile .body { flex: 1; min-width: 280px; }
-    .profile .name { font-family: var(--font-serif); font-size: clamp(18px, 1.2vw + 0.8rem, 22px); margin: 0 0 6px; }
-    .profile .role { color: #6b7280; margin: 0 0 14px; font-size: clamp(12px, 0.6vw + 0.6rem, 14px); letter-spacing: .1em; }
-    .feature-note { text-align:center; color:#666; margin:-6px 0 26px; }
-    .commitment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .commitment-item { border: 1px solid #f0f2f5; border-radius: 8px; padding: 20px; background: #fff; }
-    .commitment-item h3 { font-family: var(--font-serif); font-size: clamp(16px, 1vw + 0.7rem, 18px); margin: 0 0 6px; }
-    .commitment-item h3::before { content: '✓'; color: var(--primary-color); margin-right: 8px; }
-    .commitment-item p { margin: 0; color: #555; }
-    @media (max-width: 900px){ .commitment-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px){ #about-hero { padding:48px 0; } .profile { gap: 18px; } .commitment-grid { grid-template-columns: 1fr; } }
+    #about-hero {
+      background: #f8fafc;
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    #about-hero .hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 2.2vw + 1rem, 40px);
+      margin: 0 0 8px;
+      color: var(--heading-color, #1f2a44);
+    }
+
+    #about-hero .hero-content p {
+      color: #667;
+      margin: 0;
+      letter-spacing: .2em;
+    }
+
+    .profile {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile .photo {
+      flex: 0 0 280px;
+    }
+
+    .profile .photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .profile .body {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .profile .name {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 1.2vw + 0.8rem, 22px);
+      margin: 0 0 6px;
+    }
+
+    .profile .role {
+      color: #6b7280;
+      margin: 0 0 14px;
+      font-size: clamp(12px, 0.6vw + 0.6rem, 14px);
+      letter-spacing: .1em;
+    }
+
+    .feature-note {
+      text-align: center;
+      color: #666;
+      margin: -6px 0 26px;
+    }
+
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .commitment-item {
+      border: 1px solid #f0f2f5;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .commitment-item h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1vw + 0.7rem, 18px);
+      margin: 0 0 6px;
+    }
+
+    .commitment-item h3::before {
+      content: '✓';
+      color: var(--primary-color);
+      margin-right: 8px;
+    }
+
+    .commitment-item p {
+      margin: 0;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .commitment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #about-hero {
+        padding: 48px 0;
+      }
+
+      .profile {
+        gap: 18px;
+      }
+
+      .commitment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <script defer src="script.js"></script>
   <link rel="canonical" href="about.html">
@@ -41,15 +137,46 @@
   <meta name="twitter:image" content="images/cosyama.cherie.esthe.6.png">
   <style>
     /* Fluid Typography (in-page) */
-    html { font-size: clamp(15px, 1.6vw, 18px); }
-    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; }
-    h2, .section-title { font-size: clamp(22px, 4.6vw, 32px); line-height: 1.3; }
-    h3 { font-size: clamp(18px, 3.4vw, 24px); line-height: 1.4; }
-    small, .small, .section-subtitle { font-size: clamp(12px, 2.6vw, 14px); letter-spacing: .06em; }
-    p, li { font-size: clamp(14px, 2.6vw, 16px); }
-    .btn, button { font-size: clamp(14px, 2.8vw, 16px); line-height: 1.25; }
+    html {
+      font-size: clamp(15px, 1.6vw, 18px);
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.2;
+    }
+
+    h2,
+    .section-title {
+      font-size: clamp(22px, 4.6vw, 32px);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: clamp(18px, 3.4vw, 24px);
+      line-height: 1.4;
+    }
+
+    small,
+    .small,
+    .section-subtitle {
+      font-size: clamp(12px, 2.6vw, 14px);
+      letter-spacing: .06em;
+    }
+
+    p,
+    li {
+      font-size: clamp(14px, 2.6vw, 16px);
+    }
+
+    .btn,
+    button {
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.25;
+    }
   </style>
 </head>
+
 <body>
   <div id="site-header"></div>
 
@@ -63,60 +190,7 @@
       </div>
     </section>
 
-    <!-- SUPER Credo Section -->
-    <section class="section">
-      <div class="super-container">
-        <h1>当サロンの「SUPER」なこだわり</h1>
-        <p class="subtitle">私たちのSUPER（スーパー）は、お客様にお約束する5つの価値であり、スタッフ一人ひとりの行動を導く「コンパス」です。<br>この5つの「お約束」のもと、私たちは最高の施術と感動体験をお届けします。</p>
 
-        <div class="credo-grid">
-          <div class="credo-item">
-            <h2>S | Safety<br>（安全性）</h2>
-            <ul>
-              <li>完璧な体調管理と消毒を実施します。</li>
-              <li>お客様の個人情報を厳重に管理します。</li>
-              <li>安全性を最優先にした施術を「お約束」します。</li>
-            </ul>
-          </div>
-
-          <div class="credo-item">
-            <h2>U | Utility<br>（多才性）</h2>
-            <ul>
-              <li>全体を見て積極的に行動します。</li>
-              <li>担当外でも率先してサポートします。</li>
-              <li>「みんなのサロン」という意識で連携します。</li>
-            </ul>
-          </div>
-
-          <div class="credo-item">
-            <h2>P | Professionalism<br>（プロ意識）</h2>
-            <ul>
-              <li>継続的な技術と知識の向上に努めます。</li>
-              <li>一期一会のおもてなし精神を大切にします。</li>
-              <li>お客様の期待を超える価値を提供します。</li>
-            </ul>
-          </div>
-
-          <div class="credo-item">
-            <h2>E | Experience<br>（感動体験）</h2>
-            <ul>
-              <li>心からの「来てよかった」体験を創り出します。</li>
-              <li>五感すべてに働きかける工夫を凝らします。</li>
-              <li>お客様一人ひとりの喜びを創出します。</li>
-            </ul>
-          </div>
-
-          <div class="credo-item">
-            <h2>R | Relationship<br>（信頼関係）</h2>
-            <ul>
-              <li>感謝の言葉を日常的に伝えます。</li>
-              <li>地域との関わりを大切にします。</li>
-              <li>温かい「つながり」を育みます。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="section bg-light">
       <div class="container">
@@ -124,9 +198,17 @@
         <p class="section-subtitle">ABOUT SALON</p>
         <div class="concept-content">
           <div class="concept-text">
-            <h3>肌も心もふっと軽く、前向きに。</h3>          <p class="section-subtitle" style="font-size: 21px;">エステ以上の満足で医療より優しく</p>
-            <p>Cosme Yamamoto は、落ち着いた空間で “素肌の心地よさ” を育てるプライベートサロンです。肌悩み・年齢・ライフスタイルは十人十色。丁寧なカウンセリングと確かな技術で、お一人おひとりに寄り添います。</p>
-            <p>無理のないケアで変化を重ね、日々が心地よくなる実感を。通いやすいシンプルなメニュー設計と、肌負担の少ないケアにこだわっています。</p>
+            <p>お肌も、ココロも、身体までも。<br>
+              ふっと軽くなって、前向きになれる場所でありたいと思っています。</p>
+            <p>肌悩みも年齢もライフスタイルも、人それぞれ。<br>
+              リラグゼーションを求める方も、しっかり結果を求める方も。<br>
+              丁寧なカウンセリングと確かな技術で、お一人おひとりに合わせたケアをご提案します。</p>
+            <p>私たちがお届けするのは、単なるフェイシャルエステではありません。<br>
+              リラックスできる穏やかな空間の中で、お悩みに合わせた安心安全な機器を活用し、肌と心をやさしく整えながら、めぐりを促します。</p>
+            <p>うるおいとハリのある素肌へ。<br>
+              施術後には、心も身体もふっと軽くなる感覚を目指しています。<br>
+              無理のないケアで変化を重ね、日々が心地よくなる実感を。<br>
+              通いやすいシンプルなメニュー設計と、肌負担の少ないケアにこだわり、あなたの“続けられるキレイ”をサポートします。</p>
           </div>
           <div class="concept-image">
             <img src="images/cosyama.cherie.esthe.3.png" alt="サロンの雰囲気">
@@ -160,56 +242,9 @@
       </div>
     </section>
 
-    <section class="section" id="commitment">
-      <div class="container">
-        <h2 class="section-title">サロンのこだわり</h2>
-        <p class="section-subtitle">COMMITMENT</p>
-        <!-- SUPER -->
-        <div class="commitment-grid">
-          <div class="commitment-item">
-            <h3>個別カウンセリング</h3>
-            <p>肌状態や生活リズムまで伺い、目的と優先度を共有します。</p>
-          </div>
-          <div class="commitment-item">
-            <h3>肌負担の少ない施術</h3>
-            <p>強すぎない圧と適切な刺激で、翌日も心地よいコンディションへ。</p>
-          </div>
-          <div class="commitment-item">
-            <h3>清潔・衛生管理</h3>
-            <p>リネンや機器は都度ケア。香りも穏やかな空間づくりを徹底。</p>
-          </div>
-          <div class="commitment-item">
-            <h3>ホームケアの伴走</h3>
-            <p>無理なく続けられるシンプルなケアをご提案。負担なく継続。</p>
-          </div>
-          <div class="commitment-item">
-            <h3>通いやすい設計</h3>
-            <p>時間と価格をわかりやすく。無理な勧誘は行いません。</p>
-          </div>
-          <div class="commitment-item">
-            <h3>フィードバック重視</h3>
-            <p>小さな変化も記録し、次回の施術設計に活かします。</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">セラピスト</h2>
-        <p class="section-subtitle">THERAPIST</p>
-        <div class="profile">
-          <div class="photo">
-            <img src="images/cosyama.cherie.esthe.2.png" alt="セラピスト写真">
-          </div>
-          <div class="body">
-            <p class="name">山本 <span style="font-size:.9em; color:#6b7280;">（Yamamoto）</span></p>
-            <p class="role">オーナー／エステティシャン</p>
-            <p>肌と向き合う時間が、いちばん自分に優しくなれる時間であってほしい。そんな想いで、一つひとつの施術を大切にしています。緊張がふっとほどけるような心地よさと、続ける楽しみをお届けします。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
 
     <section class="section">
       <div class="container" style="text-align:center;">
@@ -218,7 +253,7 @@
         <p>メニュー選びのご相談やご不明点もお気軽にどうぞ。</p>
         <div style="display:flex; gap:12px; flex-wrap: wrap; justify-content:center;">
           <a href="tel:0299960033" class="btn">電話でお問合せ</a>
-          <a href="contact.html" class="btn">メールでお問合せ</a>
+          <a href="https://lin.ee/vxOofln" class="btn">ご予約はこちらから</a>
         </div>
       </div>
     </section>
@@ -237,7 +272,5 @@
 
   <script src="scripts/header-include.js" defer></script>
 </body>
+
 </html>
-
-
-

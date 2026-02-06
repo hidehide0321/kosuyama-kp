@@ -1,24 +1,58 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>お問い合わせ | コスメ山本</title>
   <meta name="description" content="コスメ山本へのご予約お問い合わせフォーム。お名前連絡先ご要望を入力して送信してください。">
   <link rel="stylesheet" href="style.css?v=20251003">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet">
   <meta name="format-detection" content="telephone=no">
   <style>
     /* Fluid Typography (in-page) */
-    html { font-size: clamp(15px, 1.6vw, 18px); }
-    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; }
-    h2, .section-title { font-size: clamp(22px, 4.6vw, 32px); line-height: 1.3; }
-    h3 { font-size: clamp(18px, 3.4vw, 24px); line-height: 1.4; }
-    small, .small, .section-subtitle { font-size: clamp(12px, 2.6vw, 14px); letter-spacing: .06em; }
-    p, li { font-size: clamp(14px, 2.6vw, 16px); }
-    .btn, button { font-size: clamp(14px, 2.8vw, 16px); line-height: 1.25; }
+    html {
+      font-size: clamp(15px, 1.6vw, 18px);
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.2;
+    }
+
+    h2,
+    .section-title {
+      font-size: clamp(22px, 4.6vw, 32px);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: clamp(18px, 3.4vw, 24px);
+      line-height: 1.4;
+    }
+
+    small,
+    .small,
+    .section-subtitle {
+      font-size: clamp(12px, 2.6vw, 14px);
+      letter-spacing: .06em;
+    }
+
+    p,
+    li {
+      font-size: clamp(14px, 2.6vw, 16px);
+    }
+
+    .btn,
+    button {
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.25;
+    }
   </style>
 </head>
+
 <body>
   <div id="site-header"></div>
 
@@ -63,7 +97,8 @@
 
             <div class="form-group">
               <label for="tel">電話番号 <span class="req">必須</span></label>
-              <input type="tel" id="tel" name="tel" inputmode="tel" pattern="[0-9\-\+\s]*" autocomplete="tel" placeholder="電話番号を入力してください" required>
+              <input type="tel" id="tel" name="tel" inputmode="tel" pattern="[0-9\-\+\s]*" autocomplete="tel"
+                placeholder="電話番号を入力してください" required>
               <div class="error" data-for="tel"></div>
             </div>
 
@@ -74,17 +109,19 @@
                 <option>美肌コース</option>
                 <option>リフトアップ肩こりほぐしコース</option>
                 <option>タルミ改善小顔コース</option>
-                <option>シミケアコース</option>            </select>
+                <option>シミケアコース</option>
+              </select>
             </div>
 
-                        <div class="form-row">
+            <div class="form-row">
               <div class="form-group">
                 <label for="date1">第1希望（日付）</label>
                 <input type="date" id="date1" name="date1" placeholder="第1希望の日付を選択してください">
               </div>
               <div class="form-group">
                 <label for="time1">第1希望（時間）</label>
-                <input type="time" id="time1" name="time1" step="1800" min="09:00" max="18:00" placeholder="第1希望の時間を選択してください">
+                <input type="time" id="time1" name="time1" step="1800" min="09:00" max="18:00"
+                  placeholder="第1希望の時間を選択してください">
               </div>
             </div>
             <div class="form-row">
@@ -94,7 +131,8 @@
               </div>
               <div class="form-group">
                 <label for="time2">第2希望（時間）</label>
-                <input type="time" id="time2" name="time2" step="1800" min="09:00" max="18:00" placeholder="第2希望の時間を選択してください">
+                <input type="time" id="time2" name="time2" step="1800" min="09:00" max="18:00"
+                  placeholder="第2希望の時間を選択してください">
               </div>
             </div>
             <div class="form-row">
@@ -104,7 +142,8 @@
               </div>
               <div class="form-group">
                 <label for="time3">第3希望（時間）</label>
-                <input type="time" id="time3" name="time3" step="1800" min="09:00" max="18:00" placeholder="第3希望の時間を選択してください">
+                <input type="time" id="time3" name="time3" step="1800" min="09:00" max="18:00"
+                  placeholder="第3希望の時間を選択してください">
               </div>
             </div>
 
@@ -124,10 +163,58 @@
 
             <div class="form-actions">
               <button type="submit" class="btn btn-cta">送信する</button>
-              
+
             </div>
           </div>
         </form>
+      </div>
+    </section>
+    <section id="sns-links" class="section bg-light">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">公式SNS</h2>
+        <p class="section-subtitle">FOLLOW US</p>
+        <p style="margin-bottom: 24px;">最新情報やお得なキャンペーン情報を配信中！</p>
+        <div class="sns-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.instagram.com/cosme_yamamoto?igsh=bGRtN3V6ajJxcDdy" class="btn"
+            style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; min-width: 240px; border: none; font-size: 16px;">
+            <span style="margin-right:8px;">📷</span>Instagram
+          </a>
+          <a href="https://lin.ee/vxOofln" class="btn"
+            style="background-color: #06c755; color: white; min-width: 240px; border: none; font-size: 16px;">
+            <span style="margin-right:8px;">💬</span>LINE公式アカウント
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="section">
+      <div class="container">
+        <h2 class="section-title">アクセス</h2>
+        <p class="section-subtitle">ACCESS</p>
+        <div class="access-content">
+          <div class="access-map">
+            <iframe src="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m&output=embed" width="100%"
+              height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              aria-label="コスメ山本の地図"></iframe>
+          </div>
+          <div class="access-info">
+            <p><strong>コスメ山本</strong></p>
+            <p>営業時間: 10:00〜18:30</p>
+            <p>定休日: 日・月</p>
+            <p id="business-status" class="business-status" aria-live="polite">準備中</p>
+            <p>TEL: <a href="tel:0299960033">0299-96-0033</a></p>
+            <div class="info-inline store-brief" aria-label="店舗情報">
+              <ul style="list-style:none; padding:0; margin:8px 0 0;">
+                <li>住所: <a href="https://www.google.com/maps?q=Cosme%20Yamamoto&hl=ja&z=17&t=m" target="_blank"
+                    rel="noopener">Googleマップで開く</a></li>
+                <li>ご予約: お電話 <a href="tel:0299960033">0299-96-0033</a> または <a href="#contact-form">フォーム</a></li>
+                <li>営業時間: 10:00–18:30 / 定休日: 日・月</li>
+                <li id="store-parking">8台完備</li>
+                <li id="store-payment"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -171,16 +258,16 @@
   <script src="scripts/header-include.js" defer></script>
   <!-- 【スクリプトK2: 電話未入力時の文字色（赤）統一】 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       if (!document.getElementById('unified-invalid-color-style')) {
         var st = document.createElement('style');
         st.id = 'unified-invalid-color-style';
-        st.textContent = ''+
-          '.is-invalid input, .is-invalid select, .is-invalid textarea, '+
-          'input.is-invalid, select.is-invalid, textarea.is-invalid{'+
-          '  border-color:#d00 !important;'+
-          '  color:#d00 !important;'+
-          '}'+
+        st.textContent = '' +
+          '.is-invalid input, .is-invalid select, .is-invalid textarea, ' +
+          'input.is-invalid, select.is-invalid, textarea.is-invalid{' +
+          '  border-color:#d00 !important;' +
+          '  color:#d00 !important;' +
+          '}' +
           '.is-invalid label{ color:#d00 !important; }';
         document.head.appendChild(st);
       }
@@ -188,159 +275,159 @@
       var phones = Array.prototype.slice.call(document.querySelectorAll(
         'input[type="tel"], input[id*="tel" i], input[name*="tel" i], input[id*="phone" i], input[name*="phone" i]'
       ));
-      function containerOf(el){ return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
-      function setInvalid(el){ el.classList.add('is-invalid'); var c=containerOf(el); if(c) c.classList.add('is-invalid'); }
-      function clearInvalid(el){ el.classList.remove('is-invalid'); var c=containerOf(el); if(c) c.classList.remove('is-invalid'); }
-      phones.forEach(function(el){
-        el.addEventListener('input', function(){ if (el.value.trim()) { clearInvalid(el); } });
-        el.addEventListener('blur', function(){ if (!el.value.trim()) { setInvalid(el); } });
+      function containerOf(el) { return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
+      function setInvalid(el) { el.classList.add('is-invalid'); var c = containerOf(el); if (c) c.classList.add('is-invalid'); }
+      function clearInvalid(el) { el.classList.remove('is-invalid'); var c = containerOf(el); if (c) c.classList.remove('is-invalid'); }
+      phones.forEach(function (el) {
+        el.addEventListener('input', function () { if (el.value.trim()) { clearInvalid(el); } });
+        el.addEventListener('blur', function () { if (!el.value.trim()) { setInvalid(el); } });
       });
     });
   </script>
   <!-- 【スクリプトK3: 電話の赤色適用強化（文字/プレースホルダ/ラベル）】 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       // スタイル強化（文字・placeholder・ラベルを赤）
       if (!document.getElementById('unified-invalid-color-style-2')) {
         var st = document.createElement('style');
         st.id = 'unified-invalid-color-style-2';
-        st.textContent = ''+
-          '.is-invalid input, .is-invalid select, .is-invalid textarea,'+
-          'input.is-invalid, select.is-invalid, textarea.is-invalid{'+
-          '  border-color:#d00 !important;'+
-          '  color:#d00 !important;'+
-          '}'+
+        st.textContent = '' +
+          '.is-invalid input, .is-invalid select, .is-invalid textarea,' +
+          'input.is-invalid, select.is-invalid, textarea.is-invalid{' +
+          '  border-color:#d00 !important;' +
+          '  color:#d00 !important;' +
+          '}' +
           // placeholder の色も赤に統一
-          '.is-invalid input::placeholder, input.is-invalid::placeholder{ color:#d00 !important; opacity:1; }'+
-          'input.is-invalid::-webkit-input-placeholder{ color:#d00 !important; }'+
-          'input.is-invalid::-moz-placeholder{ color:#d00 !important; }'+
-          'input.is-invalid:-ms-input-placeholder{ color:#d00 !important; }'+
-          'input.is-invalid::-ms-input-placeholder{ color:#d00 !important; }'+
+          '.is-invalid input::placeholder, input.is-invalid::placeholder{ color:#d00 !important; opacity:1; }' +
+          'input.is-invalid::-webkit-input-placeholder{ color:#d00 !important; }' +
+          'input.is-invalid::-moz-placeholder{ color:#d00 !important; }' +
+          'input.is-invalid:-ms-input-placeholder{ color:#d00 !important; }' +
+          'input.is-invalid::-ms-input-placeholder{ color:#d00 !important; }' +
           '.is-invalid label{ color:#d00 !important; }';
         document.head.appendChild(st);
       }
 
-      function containerOf(el){ return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
-      function isPhoneLike(el){
-        var id=(el.id||'').toLowerCase(); var nm=(el.name||'').toLowerCase(); var tp=(el.type||'').toLowerCase();
+      function containerOf(el) { return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
+      function isPhoneLike(el) {
+        var id = (el.id || '').toLowerCase(); var nm = (el.name || '').toLowerCase(); var tp = (el.type || '').toLowerCase();
         if (tp === 'tel') return true;
-        return tp === 'text' && (id.indexOf('tel')>=0 || id.indexOf('phone')>=0 || nm.indexOf('tel')>=0 || nm.indexOf('phone')>=0 || id.indexOf('denwa')>=0 || nm.indexOf('denwa')>=0);
+        return tp === 'text' && (id.indexOf('tel') >= 0 || id.indexOf('phone') >= 0 || nm.indexOf('tel') >= 0 || nm.indexOf('phone') >= 0 || id.indexOf('denwa') >= 0 || nm.indexOf('denwa') >= 0);
       }
       var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
       var phones = inputs.filter(isPhoneLike);
-      function setInvalid(el){ el.classList.add('is-invalid'); var c=containerOf(el); if(c) c.classList.add('is-invalid'); }
-      function clearInvalid(el){ el.classList.remove('is-invalid'); var c=containerOf(el); if(c) c.classList.remove('is-invalid'); }
-      phones.forEach(function(el){
-        el.addEventListener('input', function(){ if (el.value.trim()) { clearInvalid(el); } });
-        el.addEventListener('blur', function(){ if (!el.value.trim()) { setInvalid(el); } });
+      function setInvalid(el) { el.classList.add('is-invalid'); var c = containerOf(el); if (c) c.classList.add('is-invalid'); }
+      function clearInvalid(el) { el.classList.remove('is-invalid'); var c = containerOf(el); if (c) c.classList.remove('is-invalid'); }
+      phones.forEach(function (el) {
+        el.addEventListener('input', function () { if (el.value.trim()) { clearInvalid(el); } });
+        el.addEventListener('blur', function () { if (!el.value.trim()) { setInvalid(el); } });
       });
     });
   </script>
   <!-- 【スクリプトK4: 電話 未入力時の赤色強制（文字/枠/ラベル/placeholder）】 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       // 強制スタイル（!important で上書き）
       if (!document.getElementById('phone-invalid-strong-style')) {
         var st = document.createElement('style');
         st.id = 'phone-invalid-strong-style';
-        st.textContent = ''+
-          'input[data-unified-phone].is-invalid{ color:#d00 !important; border-color:#d00 !important; }'+
-          'input[data-unified-phone].is-invalid::placeholder{ color:#d00 !important; opacity:1; }'+
+        st.textContent = '' +
+          'input[data-unified-phone].is-invalid{ color:#d00 !important; border-color:#d00 !important; }' +
+          'input[data-unified-phone].is-invalid::placeholder{ color:#d00 !important; opacity:1; }' +
           '.is-invalid label[data-unified-phone-label]{ color:#d00 !important; }';
         document.head.appendChild(st);
       }
 
-      function containerOf(el){
+      function containerOf(el) {
         return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement;
       }
-      function getLabelText(el){
-        var t='';
-        if (el.id) { try { var lb=document.querySelector('label[for="'+CSS.escape(el.id)+'"]'); if(lb) t=lb.textContent||''; } catch(e){} }
-        if (!t) { var w=el.closest('label'); if(w) t=w.textContent||''; }
-        if (!t) { var g=containerOf(el); if(g){ var lb2=g.querySelector('label'); if(lb2) t=lb2.textContent||''; } }
-        return (t||'').replace(/\s+/g,'').trim();
+      function getLabelText(el) {
+        var t = '';
+        if (el.id) { try { var lb = document.querySelector('label[for="' + CSS.escape(el.id) + '"]'); if (lb) t = lb.textContent || ''; } catch (e) { } }
+        if (!t) { var w = el.closest('label'); if (w) t = w.textContent || ''; }
+        if (!t) { var g = containerOf(el); if (g) { var lb2 = g.querySelector('label'); if (lb2) t = lb2.textContent || ''; } }
+        return (t || '').replace(/\s+/g, '').trim();
       }
-      function labelsOf(el){
-        var arr=[]; if (el.id) { try { var lb=document.querySelector('label[for="'+CSS.escape(el.id)+'"]'); if(lb) arr.push(lb); } catch(e){} }
-        var wrap=el.closest('label'); if (wrap) arr.push(wrap);
-        var g=containerOf(el); if (g){ var lb2=g.querySelector('label'); if(lb2) arr.push(lb2); }
+      function labelsOf(el) {
+        var arr = []; if (el.id) { try { var lb = document.querySelector('label[for="' + CSS.escape(el.id) + '"]'); if (lb) arr.push(lb); } catch (e) { } }
+        var wrap = el.closest('label'); if (wrap) arr.push(wrap);
+        var g = containerOf(el); if (g) { var lb2 = g.querySelector('label'); if (lb2) arr.push(lb2); }
         return arr;
       }
-      function isPhoneLike(el){
-        var type=(el.type||'').toLowerCase();
-        var id=(el.id||'').toLowerCase();
-        var nm=(el.name||'').toLowerCase();
-        var ph=(el.placeholder||'').toLowerCase();
-        var lab=getLabelText(el).toLowerCase();
-        return type==='tel' || /tel|phone|denwa/.test(id+' '+nm+' '+ph) || /電話|電話番号|tel/i.test(lab);
+      function isPhoneLike(el) {
+        var type = (el.type || '').toLowerCase();
+        var id = (el.id || '').toLowerCase();
+        var nm = (el.name || '').toLowerCase();
+        var ph = (el.placeholder || '').toLowerCase();
+        var lab = getLabelText(el).toLowerCase();
+        return type === 'tel' || /tel|phone|denwa/.test(id + ' ' + nm + ' ' + ph) || /電話|電話番号|tel/i.test(lab);
       }
 
       var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
       var phones = inputs.filter(isPhoneLike);
 
-      function markInvalid(el){
-        el.setAttribute('data-unified-phone','1');
+      function markInvalid(el) {
+        el.setAttribute('data-unified-phone', '1');
         el.classList.add('is-invalid');
         // 念のためインラインでも強制
         el.style.color = '#d00';
         el.style.borderColor = '#d00';
-        labelsOf(el).forEach(function(lb){ lb.setAttribute('data-unified-phone-label','1'); lb.style.color = '#d00'; });
+        labelsOf(el).forEach(function (lb) { lb.setAttribute('data-unified-phone-label', '1'); lb.style.color = '#d00'; });
       }
-      function clearInvalid(el){
+      function clearInvalid(el) {
         el.classList.remove('is-invalid');
         el.style.color = '';
         el.style.borderColor = '';
-        labelsOf(el).forEach(function(lb){ if (lb.getAttribute('data-unified-phone-label')==='1'){ lb.style.color=''; } });
+        labelsOf(el).forEach(function (lb) { if (lb.getAttribute('data-unified-phone-label') === '1') { lb.style.color = ''; } });
       }
 
-      phones.forEach(function(el){
+      phones.forEach(function (el) {
         // 入力で解除
-        el.addEventListener('input', function(){ if (el.value.trim()) { clearInvalid(el); } });
+        el.addEventListener('input', function () { if (el.value.trim()) { clearInvalid(el); } });
         // フォーカスアウトで未入力なら赤適用
-        el.addEventListener('blur', function(){ if (!el.value.trim()) { markInvalid(el); } });
+        el.addEventListener('blur', function () { if (!el.value.trim()) { markInvalid(el); } });
       });
       // 送信時にも適用
       var form = (phones[0] && phones[0].form) || null;
       if (form && !form.dataset.phoneInvalidK4) {
-        form.addEventListener('submit', function(ev){
+        form.addEventListener('submit', function (ev) {
           var ok = true;
-          phones.forEach(function(el){ if (!el.value.trim()) { markInvalid(el); ok = false; } });
+          phones.forEach(function (el) { if (!el.value.trim()) { markInvalid(el); ok = false; } });
           if (!ok) { ev.preventDefault(); ev.stopPropagation(); }
-        }, { capture:true });
+        }, { capture: true });
         form.dataset.phoneInvalidK4 = '1';
       }
     });
   </script>
   <!-- 【スクリプトU: 未入力表示の完全統一（お名前/メール/件名/電話）】 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       // 簡易スタイル（既存があればそちら優先）
       if (!document.getElementById('unified-required-style')) {
         var st = document.createElement('style');
         st.id = 'unified-required-style';
-        st.textContent = ''+
-          '.error-message{color:#d00;font-size:.9em;margin-top:4px;display:block;}'+
-          '.is-invalid{border-color:#d00 !important;}'+
+        st.textContent = '' +
+          '.error-message{color:#d00;font-size:.9em;margin-top:4px;display:block;}' +
+          '.is-invalid{border-color:#d00 !important;}' +
           '.is-invalid label{color:#d00 !important;}';
         document.head.appendChild(st);
       }
 
-      function labelText(el){
-        var t='';
-        if (el.id) { try { var lb=document.querySelector('label[for="'+CSS.escape(el.id)+'"]'); if(lb) t=lb.textContent||''; } catch(e){} }
-        if (!t) { var w=el.closest('label'); if(w) t=w.textContent||''; }
+      function labelText(el) {
+        var t = '';
+        if (el.id) { try { var lb = document.querySelector('label[for="' + CSS.escape(el.id) + '"]'); if (lb) t = lb.textContent || ''; } catch (e) { } }
+        if (!t) { var w = el.closest('label'); if (w) t = w.textContent || ''; }
         if (!t) {
           var g = el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div');
-          if (g) { var lb2=g.querySelector('label'); if (lb2) t=lb2.textContent||''; }
+          if (g) { var lb2 = g.querySelector('label'); if (lb2) t = lb2.textContent || ''; }
         }
-        return (t||'').replace(/\s+/g,'').trim();
+        return (t || '').replace(/\s+/g, '').trim();
       }
-      function isNameLike(el){ var s=(el.id+' '+el.name+' '+labelText(el)).toLowerCase(); return /name|namae|onamae|shimei/.test(s)||/お名前|氏名/.test(labelText(el)); }
-      function isEmailLike(el){ var s=(el.id+' '+el.name+' '+(el.placeholder||'')+' '+labelText(el)).toLowerCase(); return el.type==='email'||/mail|email/.test(s)||/メール|メールアドレス/.test(labelText(el)); }
-      function isSubjectLike(el){ var s=(el.id+' '+el.name+' '+labelText(el)).toLowerCase(); return /subject|kenmei/.test(s)||/件名/.test(labelText(el)); }
-      function isPhoneLike(el){ var s=(el.id+' '+el.name+' '+(el.placeholder||'')+' '+labelText(el)).toLowerCase(); return el.type==='tel'||/tel|phone|denwa/.test(s)||/電話|電話番号|TEL/i.test(labelText(el)); }
-      function pick(test){ var nodes=[].slice.call(document.querySelectorAll('input,textarea,select')); for (var i=0;i<nodes.length;i++){ if(test(nodes[i])) return nodes[i]; } return null; }
-      function containerOf(el){ return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
+      function isNameLike(el) { var s = (el.id + ' ' + el.name + ' ' + labelText(el)).toLowerCase(); return /name|namae|onamae|shimei/.test(s) || /お名前|氏名/.test(labelText(el)); }
+      function isEmailLike(el) { var s = (el.id + ' ' + el.name + ' ' + (el.placeholder || '') + ' ' + labelText(el)).toLowerCase(); return el.type === 'email' || /mail|email/.test(s) || /メール|メールアドレス/.test(labelText(el)); }
+      function isSubjectLike(el) { var s = (el.id + ' ' + el.name + ' ' + labelText(el)).toLowerCase(); return /subject|kenmei/.test(s) || /件名/.test(labelText(el)); }
+      function isPhoneLike(el) { var s = (el.id + ' ' + el.name + ' ' + (el.placeholder || '') + ' ' + labelText(el)).toLowerCase(); return el.type === 'tel' || /tel|phone|denwa/.test(s) || /電話|電話番号|TEL/i.test(labelText(el)); }
+      function pick(test) { var nodes = [].slice.call(document.querySelectorAll('input,textarea,select')); for (var i = 0; i < nodes.length; i++) { if (test(nodes[i])) return nodes[i]; } return null; }
+      function containerOf(el) { return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
 
       var fields = {
         name: pick(isNameLike),
@@ -359,14 +446,14 @@
 
       // ブラウザのバブルを抑制
       var form = (fields.name && fields.name.form) || (fields.email && fields.email.form) || (fields.subject && fields.subject.form) || (fields.phone && fields.phone.form);
-      if (form) form.setAttribute('novalidate','novalidate');
+      if (form) form.setAttribute('novalidate', 'novalidate');
 
-      function ensureErrorNode(el){
+      function ensureErrorNode(el) {
         var c = containerOf(el) || el.parentElement;
         var id = el.id || el.name || '';
         // 既存のエラー系要素を一旦除去（下段のみ残す）
         var nodes = [].slice.call(c.querySelectorAll('.error-message, .error, .validation-error, .help-inline, .help-block, .error-txt, .errorText, .field-error, .form-error'));
-        if (nodes.length>1) { nodes.slice(0,-1).forEach(function(n){ try{ n.remove(); }catch(e){ n.style.display='none'; } }); }
+        if (nodes.length > 1) { nodes.slice(0, -1).forEach(function (n) { try { n.remove(); } catch (e) { n.style.display = 'none'; } }); }
         var n = c.querySelector('[data-error-for]') || c.querySelector('.error-message');
         if (!n) {
           n = document.createElement('div');
@@ -376,30 +463,30 @@
         }
         return n;
       }
-      function showError(el, msg){
+      function showError(el, msg) {
         var n = ensureErrorNode(el);
         n.textContent = msg;
         n.style.display = 'block';
         el.classList.add('is-invalid');
         var c = containerOf(el); if (c) c.classList.add('is-invalid');
       }
-      function clearError(el){
+      function clearError(el) {
         var c = containerOf(el);
         if (c) c.classList.remove('is-invalid');
         el.classList.remove('is-invalid');
         var n = c ? c.querySelector('[data-error-for]') || c.querySelector('.error-message') : null;
-        if (n) { n.textContent=''; n.style.display='none'; }
+        if (n) { n.textContent = ''; n.style.display = 'none'; }
       }
 
-      function validate(el, type){
+      function validate(el, type) {
         if (!el) return true;
-        var v = (el.value||'').trim();
+        var v = (el.value || '').trim();
         if (!v) {
-          var m = (type==='name')? msgs.name : (type==='email')? msgs.emailMissing : (type==='subject')? msgs.subject : msgs.phone;
+          var m = (type === 'name') ? msgs.name : (type === 'email') ? msgs.emailMissing : (type === 'subject') ? msgs.subject : msgs.phone;
           showError(el, m);
           return false;
         }
-        if (type==='email') {
+        if (type === 'email') {
           // type=email ならブラウザのチェック、なければ簡易チェック
           var ok = true;
           if (el.type === 'email' && el.validity && el.validity.typeMismatch) ok = false;
@@ -410,11 +497,11 @@
         return true;
       }
 
-      function bind(el, type){
+      function bind(el, type) {
         if (!el) return;
-        el.required = true; el.setAttribute('aria-required','true');
-        el.addEventListener('input', function(){ clearError(el); el.setCustomValidity(''); });
-        el.addEventListener('blur', function(){ validate(el, type); });
+        el.required = true; el.setAttribute('aria-required', 'true');
+        el.addEventListener('input', function () { clearError(el); el.setCustomValidity(''); });
+        el.addEventListener('blur', function () { validate(el, type); });
       }
 
       bind(fields.name, 'name');
@@ -423,7 +510,7 @@
       bind(fields.phone, 'phone');
 
       if (form) {
-        form.addEventListener('submit', function(ev){
+        form.addEventListener('submit', function (ev) {
           var ok = true;
           ok = validate(fields.name, 'name') && ok;
           ok = validate(fields.email, 'email') && ok;
@@ -436,7 +523,7 @@
   </script>
   <!-- 【スクリプトP: 個人情報の取り扱い 同意チェック必須／未同意で警告を統一表示】 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       // スタイル（既存の統一スタイルと同等）
       if (!document.getElementById('unified-consent-style')) {
         var st = document.createElement('style');
@@ -445,19 +532,19 @@
         document.head.appendChild(st);
       }
 
-      function containerOf(el){ return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
-      function labelText(el){
-        var t='';
-        if (el.id) { try { var lb=document.querySelector('label[for="'+CSS.escape(el.id)+'"]'); if(lb) t=lb.textContent||''; } catch(e){} }
-        if (!t){ var wrap=el.closest('label'); if(wrap) t=wrap.textContent||''; }
-        if (!t){ var grp=containerOf(el); if(grp){ var lb2=grp.querySelector('label'); if(lb2) t=lb2.textContent||''; } }
-        return (t||'').replace(/\s+/g,'').trim();
+      function containerOf(el) { return el.closest('.form-group, .field, .formItem, .inputField, .form-row, .row, p, div') || el.parentElement; }
+      function labelText(el) {
+        var t = '';
+        if (el.id) { try { var lb = document.querySelector('label[for="' + CSS.escape(el.id) + '"]'); if (lb) t = lb.textContent || ''; } catch (e) { } }
+        if (!t) { var wrap = el.closest('label'); if (wrap) t = wrap.textContent || ''; }
+        if (!t) { var grp = containerOf(el); if (grp) { var lb2 = grp.querySelector('label'); if (lb2) t = lb2.textContent || ''; } }
+        return (t || '').replace(/\s+/g, '').trim();
       }
-      function ensureErrorNode(el){
+      function ensureErrorNode(el) {
         var c = containerOf(el) || el.parentElement;
         // 重複する既存のエラー要素を整理して1つに統一
         var nodes = [].slice.call(c.querySelectorAll('.error-message, .error, .validation-error, .help-inline, .help-block, .error-txt, .errorText, .field-error, .form-error'));
-        if (nodes.length>1) { nodes.slice(0,-1).forEach(function(n){ try{ n.remove(); }catch(e){ n.style.display='none'; } }); }
+        if (nodes.length > 1) { nodes.slice(0, -1).forEach(function (n) { try { n.remove(); } catch (e) { n.style.display = 'none'; } }); }
         var id = el.id || el.name || '';
         var n = c.querySelector('[data-error-for]') || c.querySelector('.error-message');
         if (!n) {
@@ -468,54 +555,42 @@
         }
         return n;
       }
-      function showError(el, msg){ var n=ensureErrorNode(el); n.textContent=msg; n.style.display='block'; var c=containerOf(el); if(c) c.classList.add('is-invalid'); }
-      function clearError(el){ var c=containerOf(el); if(c) c.classList.remove('is-invalid'); var n=c? c.querySelector('[data-error-for]')||c.querySelector('.error-message') : null; if(n){ n.textContent=''; n.style.display='none'; } }
+      function showError(el, msg) { var n = ensureErrorNode(el); n.textContent = msg; n.style.display = 'block'; var c = containerOf(el); if (c) c.classList.add('is-invalid'); }
+      function clearError(el) { var c = containerOf(el); if (c) c.classList.remove('is-invalid'); var n = c ? c.querySelector('[data-error-for]') || c.querySelector('.error-message') : null; if (n) { n.textContent = ''; n.style.display = 'none'; } }
 
-      function isConsentLike(el){
-        var id=(el.id||'').toLowerCase(); var nm=(el.name||'').toLowerCase(); var lab=labelText(el).toLowerCase();
+      function isConsentLike(el) {
+        var id = (el.id || '').toLowerCase(); var nm = (el.name || '').toLowerCase(); var lab = labelText(el).toLowerCase();
         // 個人情報・プライバシー・同意・取り扱いなどの語を検出
-        return /privacy|policy|consent|agree|agreement|terms|kojin|personal/.test(id+' '+nm)
-               || /(個人情報|プライバシー|同意|取り扱い|個人情報の取り扱い|個人情報保護方針|利用規約|規約)/.test(lab);
+        return /privacy|policy|consent|agree|agreement|terms|kojin|personal/.test(id + ' ' + nm)
+          || /(個人情報|プライバシー|同意|取り扱い|個人情報の取り扱い|個人情報保護方針|利用規約|規約)/.test(lab);
       }
 
       var checks = [].slice.call(document.querySelectorAll('input[type="checkbox"]'));
       var consent = null;
-      for (var i=0;i<checks.length;i++){ if (isConsentLike(checks[i])) { consent = checks[i]; break; } }
+      for (var i = 0; i < checks.length; i++) { if (isConsentLike(checks[i])) { consent = checks[i]; break; } }
       if (!consent) return;
 
       // 必須化
       consent.required = true;
-      consent.setAttribute('aria-required','true');
+      consent.setAttribute('aria-required', 'true');
 
       // 変更時: チェック状態に応じてエラー表示/解除
-      consent.addEventListener('change', function(){ if (consent.checked) { clearError(consent); } else { showError(consent, '個人情報の取り扱いに同意してください'); } });
+      consent.addEventListener('change', function () { if (consent.checked) { clearError(consent); } else { showError(consent, '個人情報の取り扱いに同意してください'); } });
 
       // 送信時: 未チェックなら統一エラー表示し送信中断
       var form = consent.form || document.querySelector('form');
       if (form && !form.dataset.consentUnified) {
-        form.setAttribute('novalidate','novalidate');
-        form.addEventListener('submit', function(ev){
+        form.setAttribute('novalidate', 'novalidate');
+        form.addEventListener('submit', function (ev) {
           if (!consent.checked) {
             showError(consent, '個人情報の取り扱いに同意してください');
             ev.preventDefault(); ev.stopPropagation();
           }
-        }, { capture:true });
+        }, { capture: true });
         form.dataset.consentUnified = '1';
       }
     });
   </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
