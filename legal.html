@@ -1,71 +1,242 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>特定商取引法に基づく表記 | Cosme Yamamoto</title>
+  <link rel="icon" href="images/cherie-favicon.png" type="image/png">
   <meta name="description" content="Cosme Yamamoto の特定商取引法に基づく表記。事業者情報、販売価格、支払方法、返品・キャンセル等について掲載します。">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="style.css?v=20251003">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet">
   <style>
     /* Scoped styles */
-    #legal { color: var(--text-color); }
-    #legal .page-lead{ color:#667; margin: 0 0 18px; text-align:center; }
-    #legal .updated{ color:#9aa3ab; font-size: .92rem; text-align:center; margin: -6px 0 24px; }
-    #legal .kv-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    #legal .kv-item{ background:#fff; border:1px solid #f0f2f5; border-radius:10px; padding:14px; }
-    #legal .kv-item b{ display:block; font-weight:700; color: var(--heading-color, #1f2a44); margin: 0 0 6px; font-family: var(--font-serif); }
-    #legal .card{ background:#fff; border:1px solid #f0f2f5; border-radius:10px; padding:18px; }
-    #legal .stack{ display:grid; gap: 14px; }
-    #legal details{ border:1px solid #e5e7eb; border-radius:10px; padding:12px; background:#fff }
-    #legal details+details{ margin-top:10px }
-    #legal summary{ font-weight:700; cursor:pointer; list-style:none }
-    #legal summary::-webkit-details-marker{ display:none }
-    #legal .table{ border:1px solid #e5e7eb; border-radius:10px; overflow:auto }
-    #legal .table table{ width:100%; border-collapse: collapse; min-width: 640px }
-    #legal .table th, #legal .table td{ padding:12px; border-bottom:1px solid #e5e7eb; text-align:left; vertical-align:top }
-    @media (max-width: 800px){ #legal .kv-grid{ grid-template-columns: 1fr } }
-  
-    </style><style>
-    /* Fluid Typography (in-page @ 340px→768px) */
-    html { font-size: clamp(15px, calc(12.62px + 0.701vw), 18px); }
-    h1 { font-size: clamp(28px, calc(18.47px + 2.804vw), 40px); line-height: 1.2; }
-    h2, .section-title { font-size: clamp(22px, calc(14.05px + 2.336vw), 32px); line-height: 1.3; }
-    h3 { font-size: clamp(18px, calc(13.23px + 1.402vw), 24px); line-height: 1.4; }
-    small, .small, .section-subtitle { font-size: clamp(12px, calc(10.41px + 0.467vw), 14px); letter-spacing: .06em; }
-    p, li { font-size: clamp(14px, calc(12.41px + 0.467vw), 16px); }
-    .btn, button { font-size: clamp(14px, calc(12.41px + 0.467vw), 16px); line-height: 1.25; }
-  </style><style>
-    /* Legal fluid type (340px→768px) */
-    #legal .kv-item b { font-size: clamp(14px, calc(10.82px + 0.935vw), 18px); }
-    #legal .kv-item div { font-size: clamp(14px, calc(12.41px + 0.467vw), 16px); }
-    #legal .card h2 { font-size: clamp(18px, calc(14.82px + 0.935vw), 22px); }
-    #legal .card p,
-    #legal .card li { font-size: clamp(14px, calc(12.41px + 0.467vw), 16px); }
-    #legal summary { font-size: clamp(15px, calc(12.62px + 0.701vw), 18px); }
+    #legal {
+      color: var(--text-color);
+    }
+
+    #legal .page-lead {
+      color: #667;
+      margin: 0 0 18px;
+      text-align: center;
+    }
+
+    #legal .updated {
+      color: #9aa3ab;
+      font-size: .92rem;
+      text-align: center;
+      margin: -6px 0 24px;
+    }
+
+    #legal .kv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    #legal .kv-item {
+      background: #fff;
+      border: 1px solid #f0f2f5;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    #legal .kv-item b {
+      display: block;
+      font-weight: 700;
+      color: var(--heading-color, #1f2a44);
+      margin: 0 0 6px;
+      font-family: var(--font-serif);
+    }
+
+    #legal .card {
+      background: #fff;
+      border: 1px solid #f0f2f5;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    #legal .stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    #legal details {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      background: #fff
+    }
+
+    #legal details+details {
+      margin-top: 10px
+    }
+
+    #legal summary {
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none
+    }
+
+    #legal summary::-webkit-details-marker {
+      display: none
+    }
+
+    #legal .table {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: auto
+    }
+
+    #legal .table table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px
+    }
+
     #legal .table th,
-    #legal .table td { font-size: clamp(12px, calc(9.62px + 0.701vw), 15px); }
-  </style><style>
-  /* Legal SP parity with privacy: match container/frame width on mobile */
-  @media (max-width: 768px){
-    /* Match privacy: container uses 90% width without extra side padding */
-    #legal { width: 90% !important; max-width: 1100px !important; padding-left: 0 !important; padding-right: 0 !important; margin: 0 auto !important; box-sizing: border-box; }
-    /* One-column grids and full-width cards/details */
-    #legal .kv-grid { grid-template-columns: 1fr !important; }
-    #legal .kv-item, #legal .card, #legal details, #legal .table { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
-  }
-</style>
-<style>
-  /* Legal SP fit adjustments for price block and tables */
-  @media (max-width: 768px){
-    #legal .kv-grid, #legal .stack { width: 100% !important; }
-    #legal .table { width: 100% !important; box-sizing: border-box; }
-    #legal .table table { min-width: 0 !important; width: 100% !important; table-layout: fixed; }
-    #legal .table th, #legal .table td { word-break: break-word; white-space: normal; }
-  }
-</style>
+    #legal .table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      vertical-align: top
+    }
+
+    @media (max-width: 800px) {
+      #legal .kv-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+  <style>
+    /* Fluid Typography (in-page @ 340px→768px) */
+    html {
+      font-size: clamp(15px, calc(12.62px + 0.701vw), 18px);
+    }
+
+    h1 {
+      font-size: clamp(28px, calc(18.47px + 2.804vw), 40px);
+      line-height: 1.2;
+    }
+
+    h2,
+    .section-title {
+      font-size: clamp(22px, calc(14.05px + 2.336vw), 32px);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: clamp(18px, calc(13.23px + 1.402vw), 24px);
+      line-height: 1.4;
+    }
+
+    small,
+    .small,
+    .section-subtitle {
+      font-size: clamp(12px, calc(10.41px + 0.467vw), 14px);
+      letter-spacing: .06em;
+    }
+
+    p,
+    li {
+      font-size: clamp(14px, calc(12.41px + 0.467vw), 16px);
+    }
+
+    .btn,
+    button {
+      font-size: clamp(14px, calc(12.41px + 0.467vw), 16px);
+      line-height: 1.25;
+    }
+  </style>
+  <style>
+    /* Legal fluid type (340px→768px) */
+    #legal .kv-item b {
+      font-size: clamp(14px, calc(10.82px + 0.935vw), 18px);
+    }
+
+    #legal .kv-item div {
+      font-size: clamp(14px, calc(12.41px + 0.467vw), 16px);
+    }
+
+    #legal .card h2 {
+      font-size: clamp(18px, calc(14.82px + 0.935vw), 22px);
+    }
+
+    #legal .card p,
+    #legal .card li {
+      font-size: clamp(14px, calc(12.41px + 0.467vw), 16px);
+    }
+
+    #legal summary {
+      font-size: clamp(15px, calc(12.62px + 0.701vw), 18px);
+    }
+
+    #legal .table th,
+    #legal .table td {
+      font-size: clamp(12px, calc(9.62px + 0.701vw), 15px);
+    }
+  </style>
+  <style>
+    /* Legal SP parity with privacy: match container/frame width on mobile */
+    @media (max-width: 768px) {
+
+      /* Match privacy: container uses 90% width without extra side padding */
+      #legal {
+        width: 90% !important;
+        max-width: 1100px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+      }
+
+      /* One-column grids and full-width cards/details */
+      #legal .kv-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      #legal .kv-item,
+      #legal .card,
+      #legal details,
+      #legal .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+  <style>
+    /* Legal SP fit adjustments for price block and tables */
+    @media (max-width: 768px) {
+
+      #legal .kv-grid,
+      #legal .stack {
+        width: 100% !important;
+      }
+
+      #legal .table {
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+
+      #legal .table table {
+        min-width: 0 !important;
+        width: 100% !important;
+        table-layout: fixed;
+      }
+
+      #legal .table th,
+      #legal .table td {
+        word-break: break-word;
+        white-space: normal;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div id="site-header"></div>
 
@@ -78,12 +249,24 @@
         <p class="updated">最終更新日：2025年9月30日</p>
 
         <div class="kv-grid" aria-label="事業者の基本情報">
-          <div class="kv-item"><b>販売事業者（屋号）</b><div>コスメ山本（Cosme Yamamoto）</div></div>
-          <div class="kv-item"><b>運営統括責任者</b><div>鈴木弥生</div></div>
-          <div class="kv-item"><b>所在地</b><div>〒314-0115 茨城県神栖市知手２９７５－５</div></div>
-          <div class="kv-item"><b>電話番号</b><div><a href="tel:0299960033">0299-96-0033</a>（受付 10:00–18:30／定休：日・月）</div></div>
-          <div class="kv-item"><b>メールアドレス</b><div>記載準備中</div></div>
-          <div class="kv-item"><b>ウェブサイト</b><div><a href="https://cherie2025.com/" target="_blank" rel="noopener">https://cherie2025.com/</a></div></div>
+          <div class="kv-item"><b>販売事業者（屋号）</b>
+            <div>コスメ山本（Cosme Yamamoto）</div>
+          </div>
+          <div class="kv-item"><b>運営統括責任者</b>
+            <div>鈴木弥生</div>
+          </div>
+          <div class="kv-item"><b>所在地</b>
+            <div>〒314-0115 茨城県神栖市知手２９７５－５</div>
+          </div>
+          <div class="kv-item"><b>電話番号</b>
+            <div><a href="tel:0299960033">0299-96-0033</a>（受付 10:00–18:30／定休：日・月）</div>
+          </div>
+          <div class="kv-item"><b>メールアドレス</b>
+            <div>記載準備中</div>
+          </div>
+          <div class="kv-item"><b>ウェブサイト</b>
+            <div><a href="https://cherie2025.com/" target="_blank" rel="noopener">https://cherie2025.com/</a></div>
+          </div>
         </div>
 
         <div class="stack" style="margin-top:24px">
@@ -96,10 +279,21 @@
             <h2 style="margin:0 0 10px;font-family:var(--font-serif)">商品代金以外の必要料金</h2>
             <div class="table">
               <table>
-                <thead><tr><th>区分</th><th>内容</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>区分</th>
+                    <th>内容</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td>物販（化粧品等）</td><td>送料（地域・サイズにより変動）、振込手数料・決済手数料（各事業者規定に準拠）</td></tr>
-                  <tr><td>サロン施術</td><td>追加料金なし（オプションをご選択の場合は事前にご提示）</td></tr>
+                  <tr>
+                    <td>物販（化粧品等）</td>
+                    <td>送料（地域・サイズにより変動）、振込手数料・決済手数料（各事業者規定に準拠）</td>
+                  </tr>
+                  <tr>
+                    <td>サロン施術</td>
+                    <td>追加料金なし（オプションをご選択の場合は事前にご提示）</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -222,6 +416,5 @@
 
   <script src="scripts/header-include.js" defer></script>
 </body>
+
 </html>
-
-
