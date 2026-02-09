@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Recalculate after fonts or late layout changes
     window.addEventListener('load', setHeaderOffset);
     setTimeout(setHeaderOffset, 120);
-  } catch (_) {}
+  } catch (_) { }
   // Lazy-load non-hero images for mobile performance
   try {
     document.querySelectorAll('img:not([loading])').forEach(img => {
@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
         img.setAttribute('decoding', 'async');
       }
     });
-  } catch (_) {}
+  } catch (_) { }
   // Footer year (auto-insert current year if #y exists)
   try {
     var yEl = document.getElementById('y');
     if (yEl) { yEl.textContent = new Date().getFullYear(); }
-  } catch (_) {}
+  } catch (_) { }
   // Unify header navigation across all pages
   (function unifyHeaderNav() {
     try {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { href: 'index.html#concept', label: 'サロン紹介' },
         { href: 'menu.html', label: 'メニュー' },
         { href: 'index.html#voice', label: 'お客さまの声' },
-        { href: 'index.html#gallery', label: 'ギャラリー' },
+        { href: 'faq.html', label: 'FAQ' },
         { href: 'index.html#access', label: 'アクセス' }
       ];
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         li.appendChild(a);
         ul.appendChild(li);
       }
-    } catch (_) {}
+    } catch (_) { }
   })();
   // About page: update SUPER section heading and subtitle per request
   (function updateSuperSectionHeading() {
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         label.textContent = '「SUPER」';
       }
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // About page: remove the commitment section above Therapist
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
       const section = document.querySelector('section#commitment');
       if (section) section.remove();
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // Move top "サロンのこだわり（SUPER）" section just above Therapist
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (superSection.nextElementSibling !== therapistSection) {
         therapistSection.parentNode.insertBefore(superSection, therapistSection);
       }
-    } catch (_) {}
+    } catch (_) { }
   })();
   // Front page: set title
   try {
@@ -159,14 +159,14 @@ document.addEventListener('DOMContentLoaded', function () {
         desc.setAttribute('content', 'コスメ山本は、神栖市のフェイシャル専門エステサロン。丁寧なカウンセリングと心地よいケアで、自然体の美しさを引き出します。');
       }
     }
-  } catch (_) {}
+  } catch (_) { }
   // Set hero catch copy (header tagline)
   try {
     const heroHeading = document.querySelector('#hero h1:not(.hero-title--sp)');
     if (heroHeading) {
       heroHeading.textContent = '年齢を魅力に、美しさを肌にまとう';
     }
-  } catch (_) {}
+  } catch (_) { }
 
   // Replace "私たちの想い" (concept) section image
   (function replaceConceptImage() {
@@ -181,9 +181,9 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
       const li = document.getElementById('store-parking');
       if (li) {
-        li.textContent = '駐車場: 5台完備';
+        li.textContent = '駐車場: 8台完備';
       }
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // Access: set payment methods (cash + e-payments). Credit brands to be added on confirmation.
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const creditText = credit.join(', ');
       const epayText = epay.join('、');
       li.textContent = 'お支払い: 現金／クレジット（' + creditText + '）／電子決済（' + epayText + '）';
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // Access: insert address directly under store name
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
         p.textContent = '住所：〒314-0115 茨城県神栖市知手２９７５－５１';
         nameP.insertAdjacentElement('afterend', p);
       }
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // Access: remove address, reservation, and duplicate hours rows (per request)
@@ -230,10 +230,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const hasHours = /10:00|18:30/.test(txt);
         if (hasContact || hasMaps || hasHours) li.remove();
       });
-    } catch (_) {}
+    } catch (_) { }
   })();
 
-    // Empathy wording runtime adjustments removed (handled in HTML)
+  // Empathy wording runtime adjustments removed (handled in HTML)
 
   // (note) PASONA runtime injection remains removed
 
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return an - bn;
       });
       ordered.forEach(img => container.appendChild(img));
-    } catch (_) {}
+    } catch (_) { }
   })();
 
   // Hamburger
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.addEventListener('click', function () {
       this.classList.toggle('active');
       nav.classList.toggle('active');
-      try { this.setAttribute('aria-expanded', String(nav.classList.contains('active'))); } catch(_){}
+      try { this.setAttribute('aria-expanded', String(nav.classList.contains('active'))); } catch (_) { }
     });
 
     // Close menu when any nav link is activated (event delegation so it survives nav rebuilds)
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!a || !nav.contains(a)) return;
       hamburger.classList.remove('active');
       nav.classList.remove('active');
-      try { hamburger.setAttribute('aria-expanded', 'false'); } catch(_){}
+      try { hamburger.setAttribute('aria-expanded', 'false'); } catch (_) { }
     });
 
     // Also close on focus-out via keyboard navigation when link is activated with Enter/Space
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if ((key === 'Enter' || key === ' ') && e.target && e.target.closest('a')) {
         hamburger.classList.remove('active');
         nav.classList.remove('active');
-        try { hamburger.setAttribute('aria-expanded', 'false'); } catch(_){}
+        try { hamburger.setAttribute('aria-expanded', 'false'); } catch (_) { }
       }
     });
   }
@@ -306,57 +306,25 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     nav.querySelectorAll('a').forEach(a => {
       setIfMatch(a, (h) => /(^|\/)menu\.html$/.test(h), 'メニュー');
-      setIfMatch(a, (h) => /#gallery$/.test(h), 'ギャラリー');
-      setIfMatch(a, (h) => /#voice$/.test(h), 'お客さまの声');
-      setIfMatch(a, (h) => /#access$/.test(h), 'アクセス');
+      setIfMatch(a, (h) => /(^|\/)faq\.html$/.test(h), 'FAQ');
     });
 
-    // Ensure order: お客さまの声 → ギャラリー
+    // Ensure order: お客さまの声 → FAQ
     const ul = nav.querySelector('ul');
     if (!ul) return;
     const lis = Array.from(ul.children);
-    const liGallery = lis.find(li => li.querySelector('a[href*="#gallery"]'));
+    const liFaq = lis.find(li => li.querySelector('a[href*="faq.html"]'));
     const liVoice = lis.find(li => li.querySelector('a[href*="#voice"]'));
-    if (liGallery && liVoice) {
-      const iG = lis.indexOf(liGallery);
+    if (liFaq && liVoice) {
+      const iF = lis.indexOf(liFaq);
       const iV = lis.indexOf(liVoice);
-      if (iV > -1 && iG > -1 && iV > iG) {
-        ul.insertBefore(liVoice, liGallery);
+      if (iV > -1 && iF > -1 && iV > iF) {
+        ul.insertBefore(liVoice, liFaq);
       }
     }
   })();
 
-  // Replace Standard course image on menu and home pages
-  (function replaceStandardCourseImage() {
-    // Menu page (first course image)
-    const menuImg = document.querySelector('.menu-list .menu-list-item .menu-list-image img');
-    if (menuImg) {
-      menuImg.src = 'images/cosyama.cherie.esthe.6.png';
-      try { menuImg.alt = 'スタンダードコース'; } catch(_){}
-    }
-    // Home page digest (first card)
-    const homeImg = document.querySelector('.home-menu-cards .home-menu-card img');
-    if (homeImg) {
-      homeImg.src = 'images/cosyama.cherie.esthe.6.png';
-      try { homeImg.alt = 'スタンダードコース'; } catch(_){}
-    }
-  })();
 
-  // Replace Aging course image on menu and home pages
-  (function replaceAgingCourseImage() {
-    // Menu page (second course image)
-    const menuImgs = document.querySelectorAll('.menu-list .menu-list-item .menu-list-image img');
-    if (menuImgs && menuImgs[1]) {
-      menuImgs[1].src = 'images/cosyama.cherie.esthe.10.png';
-      try { menuImgs[1].alt = 'エイジングコース'; } catch (_) {}
-    }
-    // Home page digest (second card)
-    const homeImgs = document.querySelectorAll('.home-menu-cards .home-menu-card img');
-    if (homeImgs && homeImgs[1]) {
-      homeImgs[1].src = 'images/cosyama.cherie.esthe.10.png';
-      try { homeImgs[1].alt = 'エイジングコース'; } catch (_) {}
-    }
-  })();
 
   // Business status (JST)
   const statusEl = document.getElementById('business-status');
@@ -390,8 +358,8 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // Live clear on input/change
-  ['name','email','tel','message'].forEach(id => { const el = get(id); if (el) el.addEventListener('input', () => { mark(id, true); clearErr(id); }); });
-  ['subject','menu','date','time','agree'].forEach(id => { const el = get(id); if (el) el.addEventListener('change', () => { mark(id, true); clearErr(id); }); });
+  ['name', 'email', 'tel', 'message'].forEach(id => { const el = get(id); if (el) el.addEventListener('input', () => { mark(id, true); clearErr(id); }); });
+  ['subject', 'menu', 'date', 'time', 'agree'].forEach(id => { const el = get(id); if (el) el.addEventListener('change', () => { mark(id, true); clearErr(id); }); });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -417,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Render
     form.querySelectorAll('.error').forEach(el => el.textContent = '');
-    ['name','email','subject','tel','menu','date','time','message','agree'].forEach(id => {
+    ['name', 'email', 'subject', 'tel', 'menu', 'date', 'time', 'message', 'agree'].forEach(id => {
       const has = Object.prototype.hasOwnProperty.call(errors, id);
       mark(id, !has);
       if (has) { const e = errEl(id); if (e) e.textContent = errors[id]; }
@@ -428,25 +396,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Build mail
-    const lines = [
-      '件名: ' + (subjectValue || '未選択'),
-      'お名前: ' + name,
-      'メール: ' + email,
-      '電話: ' + (tel || '未記入'),
-      'ご希望メニュー: ' + (menu || '未選択'),
-      'ご希望日時: ' + (date || '') + (time ? (' ' + time) : ''),
-      '---',
-      message
-    ];
-    const mailSubject = encodeURIComponent((subjectValue || 'お問い合わせ') + ': ' + name);
-    const body = encodeURIComponent(lines.join('\n'));
-    const to = 'info@example.com'; // TODO: 受信先に置き換え
-    const mailto = 'mailto:' + to + '?subject=' + mailSubject + '&body=' + body;
-    // 起動後にサンクスページへ遷移（mailtoの結果はブラウザから検出できないため）
-    try { window.location.href = mailto; } finally {
-      setTimeout(() => { window.location.href = 'thanks.html'; }, 600);
-    }
+    // Validation successful, submit to server
+    form.submit();
   });
 });
 
@@ -462,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { href: 'about.html', label: 'サロン紹介' },
       { href: 'menu.html', label: 'メニュー' },
       { href: 'index.html#voice', label: 'お客さまの声' },
-      { href: 'index.html#gallery', label: 'ギャラリー' },
+      { href: 'faq.html', label: 'FAQ' },
       { href: 'index.html#access', label: 'アクセス' }
     ];
     ul.innerHTML = '';
@@ -474,6 +425,6 @@ document.addEventListener('DOMContentLoaded', function () {
       li.appendChild(a);
       ul.appendChild(li);
     });
-  } catch (_) {}
+  } catch (_) { }
 });
 
