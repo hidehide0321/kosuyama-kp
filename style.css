@@ -68,8 +68,21 @@ button, .btn { min-height: 44px; }
     text-decoration: none;
     color: var(--text-color);
     font-family: var(--font-serif);
-    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.header-logo .logo-main {
+    font-size: 22px;
     font-weight: 700;
+}
+
+.header-logo .logo-sub {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -2px; /* 少し詰める */
 }
 
 .header-nav ul {
