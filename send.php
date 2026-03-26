@@ -24,6 +24,17 @@ $date3 = isset($_POST['date3']) ? htmlspecialchars($_POST['date3'], ENT_QUOTES, 
 $time3 = isset($_POST['time3']) ? htmlspecialchars($_POST['time3'], ENT_QUOTES, 'UTF-8') : '';
 $message = isset($_POST['message']) ? htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8') : '';
 
+// --- スパム対策ここから ---
+$fax = isset($_POST['fax']) ? $_POST['fax'] : '';
+// 1. ハニーポット判定：隠しフィールド(fax)に値が入っている場合はスパム
+// 2. 日本語フィルター：お問い合わせ内容に「ひらがな」が1文字も含まれない場合はスパム（海外からの英文スパム対策）
+if ($fax !== '' || ($message !== '' && !preg_match('/[ぁ-ん]/u', $message))) {
+    // スパムと判定された場合は、プログラムを終了してサンクスページへ飛ばす（ボットには成功したと思わせる）
+    header("Location: thanks.html");
+    exit;
+}
+// --- スパム対策ここまで ---
+
 // 本文の作成
 // 本文の作成
 $body = "ホームページのお問い合わせフォームより以下の内容が送信されました。\n\n";

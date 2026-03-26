@@ -1,9 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PN3SVD2N');</script>
+  <!-- End Google Tag Manager -->
   <title>お問い合わせ | コスメ山本</title>
   <link rel="icon" href="images/cherie-favicon.png" type="image/png">
   <meta name="description" content="神栖市「コスメ山本」へのご予約・ご相談ページ。希望日時とメニューをフォームから送信可能。初回体験の質問もお気軽にどうぞ。">
@@ -13,7 +23,7 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.cherie2025.com/contact.html">
   <meta property="og:image" content="https://www.cherie2025.com/images/cosyama.cherie.esthe.6.png">
-  <link rel="stylesheet" href="style.css?v=20251003">
+  <link rel="stylesheet" href="style.css?v=20260216">
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
     rel="stylesheet">
@@ -66,6 +76,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN3SVD2N" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- ヘッダーを直接記述（表示確実化のため） -->
   <div id="site-header">
     <header class="header">
@@ -160,6 +174,12 @@
               <input type="tel" id="tel" name="tel" inputmode="tel" pattern="[0-9\-\+\s]*" autocomplete="tel"
                 placeholder="電話番号を入力してください" required>
               <div class="error" data-for="tel"></div>
+            </div>
+
+            <!-- スパム対策用ハニーポット（ユーザーには非表示、ボットが入力するとスパム判定） -->
+            <div class="form-group" style="display:none;">
+              <label for="fax">FAX番号（ここには何も入力しないでください）</label>
+              <input type="text" id="fax" name="fax" tabindex="-1" autocomplete="off">
             </div>
 
             <div class="form-group">
