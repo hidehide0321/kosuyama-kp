@@ -1672,3 +1672,9 @@ small,
   .hikari-mode, .opt-card { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
   .hikari-photo { aspect-ratio: 16 / 10; }
 }
+
+/* 2026-10-17 ヒーローの予約ボタン */
+#hero .hero-cta { margin: 24px 0 0; }
+#hero .hero-cta .btn { padding: 0 32px; min-height: 52px; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(0, 0, 0, .25); }
+/* 互換モード解消で地図の下にできた7pxのすき間を消す(互換モード時と同じ見た目にする) */
+.access-map iframe { display: block; }
