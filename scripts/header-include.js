@@ -3,7 +3,7 @@
 <header class="header">
   <div class="container">
     <div class="header-logo">
-      <a href="index.html">
+      <a href="./">
         <span class="logo-main">Cosme Yamamoto</span>
         <span class="logo-sub">Cherie</span>
       </a>
@@ -16,9 +16,9 @@
     <nav class="header-nav" id="global-nav">
       <ul>
         <li><a href="about.html">サロン案内</a></li>
-        <li><a href="index.html#concept">コンセプト</a></li>
+        <li><a href="./#concept">コンセプト</a></li>
         <li><a href="menu.html">メニュー</a></li>
-        <li><a href="index.html#voice">お客様の声</a></li>
+        <li><a href="./#voice">お客様の声</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">お問合せ</a></li>
       </ul>
