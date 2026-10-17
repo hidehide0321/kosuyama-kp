@@ -1641,7 +1641,12 @@ small,
 /* 2026-10-17 オプション「光ビューティー」(一押し) */
 #option-menu .option-list { max-width: 880px !important; }
 .hikari { margin: 0 0 32px; padding: 22px 18px; border-radius: 14px; background: linear-gradient(160deg, #fff7f3 0%, #f4f7ff 100%); border: 1px solid #ecdfd8; }
-.hikari-pick { display: inline-block; margin: 0 0 8px; padding: 2px 12px; border-radius: 999px; background: #c8344f; color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: .08em; }
+/* マスク・ポレーション導入のカード(2026-10-17 ヒデさん「カードにして」) */
+.opt-card { display: grid; grid-template-columns: 240px 1fr; gap: 16px; align-items: start; margin: 0 0 20px; padding: 18px; background: #fff; border: 1px solid #ecdfd8; border-radius: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+.opt-card--text { grid-template-columns: 1fr; }
+.opt-title { margin: 0 0 10px; font-size: 1.3rem; font-family: var(--font-serif, serif); }
+.opt-items { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.opt-items li { padding: 4px 14px; border-radius: 999px; background: #f6f0eb; color: #3a3a3a; font-size: 0.92rem; }
 .hikari-title { font-size: 1.5rem; margin: 0 0 4px; font-family: var(--font-serif, serif); }
 .hikari-en { margin-left: 10px; font-size: 0.9rem; color: #8a7a70; font-weight: 400; letter-spacing: .06em; }
 .hikari-catch { margin: 0 0 10px; font-size: 1.1rem; font-weight: 700; color: #3a3a3a; }
@@ -1664,6 +1669,6 @@ small,
 .hikari-note { margin: 12px 0 0; font-size: 0.78rem; color: #777; }
 @media (max-width: 720px) {
   .hikari { padding: 18px 12px; }
-  .hikari-mode { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+  .hikari-mode, .opt-card { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
   .hikari-photo { aspect-ratio: 16 / 10; }
 }
