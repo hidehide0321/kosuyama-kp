@@ -1656,6 +1656,7 @@ small,
 .hikari-rec { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .hikari-rec li { font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--mode) 10%, #fff); color: #333; }
 .hikari-rec li::before { content: "✓ "; color: var(--mode); font-weight: 700; }
+.hikari-note { margin: 12px 0 0; font-size: 0.78rem; color: #777; }
 @media (max-width: 720px) {
   .hikari { padding: 18px 12px; }
   .hikari-mode { grid-template-columns: 44px 1fr; gap: 10px; padding: 12px; }
