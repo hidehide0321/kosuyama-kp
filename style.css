@@ -1678,3 +1678,6 @@ small,
 #hero .hero-cta .btn { padding: 0 32px; min-height: 52px; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(0, 0, 0, .25); }
 /* 互換モード解消で地図の下にできた7pxのすき間を消す(互換モード時と同じ見た目にする) */
 .access-map iframe { display: block; }
+
+/* 2026-10-17 画面には出さず、検索・読み上げにだけ渡す文字 */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
