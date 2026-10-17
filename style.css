@@ -189,7 +189,7 @@ button,
 
 /* Hero Section */
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.webp');
     /* Avoid fixed height to prevent text clipping on fluid scaling */
     min-height: clamp(360px, 55vh, 520px);
     background-size: cover;
@@ -583,7 +583,7 @@ button,
 
 /* Menu Page */
 #menu-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.webp');
     min-height: clamp(280px, 45vh, 400px);
     background-size: cover;
     background-position: center;
@@ -812,7 +812,7 @@ button,
 
 /* Contact page */
 #contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/cosyama.cherie.esthe.6.webp');
     /* Avoid fixed height to prevent clipping */
     min-height: clamp(220px, 40vh, 360px);
     background-size: cover;
@@ -929,7 +929,7 @@ textarea {
 
 /* Hero: lighter overlay, slightly shorter */
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url('images/cosyama.cherie.esthe.6.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url('images/cosyama.cherie.esthe.6.webp');
     min-height: clamp(360px, 55vh, 520px);
 }
 
@@ -1604,7 +1604,7 @@ small,
 #faq-hero,
 #voice-hero,
 #access-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/faq_bg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/faq_bg.webp');
     min-height: clamp(280px, 45vh, 400px);
     background-size: cover;
     background-position: center;
@@ -1637,3 +1637,27 @@ small,
 .footer-pages { margin-bottom: 8px; }
 .footer .footer-pages { white-space: normal; line-height: 2.2; }
 .footer .footer-pages a { white-space: nowrap; }
+
+/* 2026-10-17 オプション「光ビューティー」(一押し) */
+.hikari { margin: 0 0 32px; padding: 22px 18px; border-radius: 14px; background: linear-gradient(160deg, #fff7f3 0%, #f4f7ff 100%); border: 1px solid #ecdfd8; }
+.hikari-pick { display: inline-block; margin: 0 0 8px; padding: 2px 12px; border-radius: 999px; background: #c8344f; color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: .08em; }
+.hikari-title { font-size: 1.5rem; margin: 0 0 4px; font-family: var(--font-serif, serif); }
+.hikari-en { margin-left: 10px; font-size: 0.9rem; color: #8a7a70; font-weight: 400; letter-spacing: .06em; }
+.hikari-catch { margin: 0 0 10px; font-size: 1.1rem; font-weight: 700; color: #3a3a3a; }
+.hikari-lead { margin: 0 0 16px; line-height: 1.9; font-size: 0.95rem; color: #444; }
+.hikari-modes { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.hikari-mode { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; padding: 14px; background: #fff; border-radius: 12px; border-left: 5px solid var(--mode); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.hikari-dot { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--mode); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: .02em; box-shadow: 0 0 0 4px color-mix(in srgb, var(--mode) 22%, transparent); }
+.hikari-body h4 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.5; }
+.hikari-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.hikari-badge { display: inline-block; margin-left: 8px; padding: 0 8px; border: 1px solid #b8a28a; border-radius: 4px; font-size: 0.72rem; color: #8a6d50; vertical-align: 2px; }
+.hikari-body p { margin: 0 0 6px; font-size: 0.92rem; line-height: 1.75; color: #444; }
+.hikari-rec-title { font-size: 0.8rem !important; font-weight: 700; color: var(--mode) !important; margin-top: 4px !important; }
+.hikari-rec { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.hikari-rec li { font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--mode) 10%, #fff); color: #333; }
+.hikari-rec li::before { content: "✓ "; color: var(--mode); font-weight: 700; }
+@media (max-width: 720px) {
+  .hikari { padding: 18px 12px; }
+  .hikari-mode { grid-template-columns: 44px 1fr; gap: 10px; padding: 12px; }
+  .hikari-dot { width: 42px; height: 42px; font-size: 0.55rem; }
+}

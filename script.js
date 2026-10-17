@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
   (function replaceConceptImage() {
     const conceptImg = document.querySelector('#concept .concept-image img');
     if (conceptImg) {
-      conceptImg.src = 'images/cosyama.cherie.esthe.2.png';
+      conceptImg.src = 'images/cosyama.cherie.esthe.2.webp';
     }
   })();
 
@@ -246,19 +246,19 @@ document.addEventListener('DOMContentLoaded', function () {
       imgs.forEach(img => {
         const src = img.getAttribute('src') || '';
         // only handle cosyama.cherie.esthe.*.png
-        const m = src.match(/cosyama\.cherie\.esthe\.(\d+)\.png$/);
+        const m = src.match(/cosyama\.cherie\.esthe\.(\d+)\.(?:png|webp)$/);
         if (!m) return;
         const n = parseInt(m[1], 10);
         if (n === 9) {
-          img.setAttribute('src', src.replace('9.png', '17.png'));
+          img.setAttribute('src', src.replace(/9\.(png|webp)$/, '17.$1'));
         } else if (n === 12) {
-          img.setAttribute('src', src.replace('12.png', '22.png'));
+          img.setAttribute('src', src.replace(/12\.(png|webp)$/, '22.$1'));
         }
       });
       // Reorder by numeric suffix
       const ordered = Array.from(container.querySelectorAll('img')).sort((a, b) => {
-        const an = parseInt((a.getAttribute('src') || '').match(/esthe\.(\d+)\.png$/)?.[1] || '0', 10);
-        const bn = parseInt((b.getAttribute('src') || '').match(/esthe\.(\d+)\.png$/)?.[1] || '0', 10);
+        const an = parseInt((a.getAttribute('src') || '').match(/esthe\.(\d+)\.(?:png|webp)$/)?.[1] || '0', 10);
+        const bn = parseInt((b.getAttribute('src') || '').match(/esthe\.(\d+)\.(?:png|webp)$/)?.[1] || '0', 10);
         return an - bn;
       });
       ordered.forEach(img => container.appendChild(img));
