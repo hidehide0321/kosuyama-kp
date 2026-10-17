@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { href: 'about.html', label: '私たちの想い' },
         { href: 'index.html#concept', label: 'サロン紹介' },
         { href: 'menu.html', label: 'メニュー' },
-        { href: 'index.html#voice', label: 'お客さまの声' },
+        { href: 'voice.html', label: 'お客さまの声' },
         { href: 'faq.html', label: 'FAQ' },
-        { href: 'index.html#access', label: 'アクセス' }
+        { href: 'access.html', label: 'アクセス' }
       ];
 
       // Rebuild nav list
@@ -153,10 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Front page: set title
   try {
     if (document.getElementById('hero')) {
-      document.title = 'コスメ山本神栖エステサロン';
+      document.title = 'コスメ山本｜神栖市のフェイシャルエステサロン';
       const desc = document.querySelector('meta[name="description"]');
       if (desc) {
-        desc.setAttribute('content', 'コスメ山本は、神栖市のフェイシャル専門エステサロン。丁寧なカウンセリングと心地よいケアで、自然体の美しさを引き出します。');
+        desc.setAttribute('content', '【神栖市】大人女性のためのフェイシャルエステサロン「コスメ山本」。たるみ改善、シミケア、毛穴・くすみケア、水素吸入まで。肌と心を整える丁寧な施術をご提案します。');
       }
     }
   } catch (_) { }
@@ -412,9 +412,9 @@ document.addEventListener('DOMContentLoaded', function () {
       { href: 'index.html#concept', label: '私たちの想い' },
       { href: 'about.html', label: 'サロン紹介' },
       { href: 'menu.html', label: 'メニュー' },
-      { href: 'index.html#voice', label: 'お客さまの声' },
+      { href: 'voice.html', label: 'お客さまの声' },
       { href: 'faq.html', label: 'FAQ' },
-      { href: 'index.html#access', label: 'アクセス' }
+      { href: 'access.html', label: 'アクセス' }
     ];
     ul.innerHTML = '';
     items.forEach(it => {

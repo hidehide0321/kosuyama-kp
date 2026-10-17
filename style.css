@@ -1601,7 +1601,9 @@ small,
 /* --------------------------------------------------
    FAQ Page Hero (Migrated from inline)
 --------------------------------------------------- */
-#faq-hero {
+#faq-hero,
+#voice-hero,
+#access-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/faq_bg.png');
     min-height: clamp(280px, 45vh, 400px);
     background-size: cover;
@@ -1613,15 +1615,25 @@ small,
     text-align: center;
 }
 
-#faq-hero .hero-content h1 {
+#faq-hero .hero-content h1,
+#voice-hero .hero-content h1,
+#access-hero .hero-content h1 {
     font-family: var(--font-serif);
     font-size: clamp(24px, 6vw, 48px);
     margin: 0;
     color: white;
 }
 
-#faq-hero .hero-content p {
+#faq-hero .hero-content p,
+#voice-hero .hero-content p,
+#access-hero .hero-content p {
     color: white;
     margin: 0;
     letter-spacing: .2em;
 }
+
+/* 2026-10-17 SNSボタンの線画アイコン / フッターのページ一覧 */
+.sns-icon { vertical-align: -3px; }
+.footer-pages { margin-bottom: 8px; }
+.footer .footer-pages { white-space: normal; line-height: 2.2; }
+.footer .footer-pages a { white-space: nowrap; }
